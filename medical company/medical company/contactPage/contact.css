@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'LucidaCalligraphy';
+    src: url('./fonts/LucidaCalligraphy.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+font-family:sans-serif;
+       .title,.bigline,h3{
+           font-family: 'LucidaCalligraphy', cursive !important;
+       }
+
+}
+.cta{
+    color: white !important;
+    width: 8rem !important;
+      text-align: center;
+    border-radius: 3rem !important;
+}
+.cta:hover{
+    color: #0556a4 !important;
+    background-color: white !important;
+    transition: all ease 600ms;
+}
+.Link_A{
+    color: #0556a4 !important;
+}
