@@ -70,9 +70,7 @@ background-color: #0556a4 !important;
 color: white !important;
 
 }
-.choose_pharma_div{
-    background-color: #e1e1e1 !important;
-}
+
 .pharma_div{
     background-image: none !important;
 }
@@ -171,4 +169,7 @@ background-color:#f2f2f2b8;
 }
 .contactSpan h2 span{
     color: #d6103d !important;
+}
+.chooseDiv{
+    margin-top: 0rem !important;
 }
