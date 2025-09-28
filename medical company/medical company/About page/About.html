@@ -162,8 +162,86 @@
   .foot-right{display:grid; gap:8px; align-content:center}
   .foot-right a{color:#cfd7e6; text-decoration:none}
   .foot-right a:hover{color:#fff}
+      /* About page styles */
+    .about-hero {
+      background: linear-gradient(rgba(17, 87, 164, 0.7), rgba(17, 87, 164, 0.7)), url("../images/about-bg.jpg") center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 120px 20px;
+    }
+    .about-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    .about-section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .about-section h2 {
+      font-size: 2rem;
+      color: #1157a4;
+      margin-bottom: 20px;
+    }
+    .about-section p {
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+    .mission-vision {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .mv-card {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+    .mv-card:hover {
+      transform: translateY(-6px);
+    }
+    .mv-card h3 {
+      color: #d6103d;
+      margin-bottom: 15px;
+    }
+    .team {
+      margin-top: 60px;
+    }
+    .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .team-member {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      width: 250px;
+      text-align: center;
+      padding: 20px;
+    }
+    .team-member img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+    .team-member h4 {
+      margin-bottom: 8px;
+      color: #1157a4;
+    }
+    .team-member p {
+      font-size: 0.95rem;
+      color: #555;
+    }
 </style>
-<link rel="stylesheet" href="career.css">
+<link rel="stylesheet" href="About.css">
 </head>
 <body>
 
@@ -175,135 +253,75 @@
   </div>
   <nav>
        <a class="Link_A" href="../index.html" target="_blank">Home</a>
-        <a class="Link_A" href="../About page/About.html"  target="_blank">About</a>
+        <a class="Link_A" href="./About.html"  target="_blank">About</a>
         <a class="Link_A" href="../ProductPage/product.html">Products</a>
-        <a class="Link_A" href="#faq"  target="_blank">FAQ</a>
+        <a class="Link_A" href="#" target="_blank">FAQ</a>
         <a class="Link_A" href="../contactPage/contact.html" target="_blank">Contact</a>
         <a class="Link_A" href="../Blog page/Blog.html"  target="_blank">Blogs</a>
         <a class=" cta career" href="../career page/career.html"  target="_blank">Career</a>
   </nav>
 </header>
 
-<!-- ================== HEADER / BREADCRUMB ================== -->
- <!-- ===== Careers Section ===== -->
-<section id="careers" style="padding:70px 0; position:relative; overflow:hidden; background:#fff;">
-  <!-- Decorative background leaves -->
-  <img src="images/leaf-bg.svg" alt="" 
-       style="position:absolute; right:-80px; top:-40px; opacity:.08; width:360px; pointer-events:none;">
-  <img src="images/leaf-bg.svg" alt="" 
-       style="position:absolute; left:-80px; bottom:-40px; opacity:.08; width:300px; transform:scaleX(-1); pointer-events:none;">
+  <!-- HERO -->
+  <section class="about-hero">
+    <h1>About Us <br/><span style="color: #d6103d;">Tetra Pharma</span></h1>
+    <p>Delivering trusted healthcare solutions with innovation and quality.</p>
+  </section>
 
-  <div style=" margin-top: 3rem !important; max-width:1100px; margin:0 auto; padding:0 16px;">
-    <!-- Title -->
-    <div style="text-align:center; margin-bottom:24px;">
-      <div style="letter-spacing:.18em;  margin-bottom:8px; font-size:14px;  color: #d6103d !important;">CAREERS</div>
-      <h2 style="font-size:38px; line-height:1.2; margin:0;   color: #0556a4;">Join Tetra Pharma</h2>
-      <p style="max-width:760px; margin:12px auto 0; font-size:17px; color:#444;">
-        Build your career with a science-driven company dedicated to innovation and health.  
-        Be part of a team that improves lives every day.
-      </p>
-    </div>
+  <!-- ABOUT CONTENT -->
+  <section class="about-section">
+    <h2>Who We Are</h2>
+    <p>
+      Tetra Pharma is a science-driven pharmaceutical company dedicated to providing innovative
+      healthcare solutions. With a strong commitment to research, quality, and patient care, 
+      we aim to make effective treatments accessible and reliable for everyone.
+    </p>
 
-    <!-- CTA buttons -->
-    <div style="display:flex; gap:12px; justify-content:center; margin:18px 0 34px;">
-      <!-- <a class="Cv_btn" href="#openings" 
-         style="display:inline-block; padding:12px 18px; background:#111; color:#fff; text-decoration:none; border-radius:6px;">
-        View Openings
-      </a> -->
-      <a class="Cv_btn" href="mailto:careers@tetrapharma.com?subject=Job%20Application" 
-         style="background-color: #0556a4 ; display:inline-block; padding:12px 18px; border:1px solid #111; color:white; text-decoration:none; border-radius:6px;">
-        Send Your CV
-      </a>
-    </div>
+    <div class="mission-vision">
+      <div class="mv-card">
+        <h3>Our Mission</h3>
+        <p>
+          	To leverage cutting-edge scientific research to develop a diverse range of high-quality, science-backed food supplements that address the specific health needs of Egyptians.<br/>
+	          To raise awareness about the importance of proactive health management through education and community engagement.<br/>
+            To foster a culture of trust and transparency, providing consumers with clear information about our products and ingredients.<br/>
+	          To be a responsible corporate citizen, committed to sustainable practices and giving back to the Egyptian community<br/>
 
-    <!-- Job Openings -->
-    <div id="openings" 
-         style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:20px;">
-      
-      <!-- Job card 1 -->
-      <article style="border:1px solid #e8e8e8; border-radius:10px; padding:18px; background:#fafafa;">
-        <div style="font-size:14px; letter-spacing:.14em; opacity:.6;">FULL-TIME • CAIRO</div>
-        <h3 style="margin:8px 0 6px; font-size:20px;">Medical Representative</h3>
-        <p style="margin:0 0 12px; color:#555; font-size:15px;">
-          Promote Tetra Pharma products to doctors and pharmacies. Minimum 1 year of experience required.
         </p>
-        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
-          <span style="font-size:12px; padding:6px 8px; background:#f5f5f5; border-radius:16px;">Field Sales</span>
-          <span style="font-size:12px; padding:6px 8px; background:#f5f5f5; border-radius:16px;">Healthcare</span>
-        </div>
-        <a class="Cv_btn" href="mailto:careers@tetrapharma.com?subject=Apply%20-%20Medical%20Representative"
-           style="display:inline-block; padding:10px 14px; background:#0556a4; color:#fff; text-decoration:none; border-radius:6px;">
-          Apply Now
-        </a>
-      </article>
+      </div>
+      <div class="mv-card">
+        <h3>Our Vision</h3>
+        <p style="    text-align: start;">
+         	In collaboration with its renowned international partners,  to be the leading innovator in the Egyptian food supplement industry, empowering Egyptians to achieve optimal health and well-being throughout their lives.<br/>
+         	To continuously redefine the standards of quality and efficacy in Egyptian supplements, setting a benchmark for the entire region.
 
-      <!-- Job card 2 -->
-      <article style="border:1px solid #e8e8e8; border-radius:10px; padding:18px; background:#fafafa;">
-        <div style="font-size:14px; letter-spacing:.14em; opacity:.6;">FULL-TIME • CAIRO</div>
-        <h3 style="margin:8px 0 6px; font-size:20px;">Regulatory Affairs Specialist</h3>
-        <p style="margin:0 0 12px; color:#555; font-size:15px;">
-          Prepare registration dossiers and ensure MOH compliance. Previous regulatory experience is a plus.
         </p>
-        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
-          <span style="font-size:12px; padding:6px 8px; background:#f5f5f5; border-radius:16px;">GMP</span>
-          <span style="font-size:12px; padding:6px 8px; background:#f5f5f5; border-radius:16px;">Compliance</span>
-        </div>
-        <a class="Cv_btn" href="mailto:careers@tetrapharma.com?subject=Apply%20-%20Regulatory%20Affairs%20Specialist"
-           style="display:inline-block; padding:10px 14px; background:#0556a4; color:#fff; text-decoration:none; border-radius:6px;">
-          Apply Now
-        </a>
-      </article>
-
-      <!-- Job card 3 -->
-      <article style="border:1px solid #e8e8e8; border-radius:10px; padding:18px; background:#fafafa;">
-        <div style="font-size:14px; letter-spacing:.14em; opacity:.6;">INTERNSHIP • REMOTE</div>
-        <h3 style="margin:8px 0 6px; font-size:20px;">Marketing Intern</h3>
-        <p style="margin:0 0 12px; color:#555; font-size:15px;">
-          Assist in content creation, social media campaigns, and product launches. Open to students and fresh grads.
-        </p>
-        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
-          <span style="font-size:12px; padding:6px 8px; background:#f5f5f5; border-radius:16px;">Social Media</span>
-          <span style="font-size:12px; padding:6px 8px; background:#f5f5f5; border-radius:16px;">Content</span>
-        </div>
-        <a class="Cv_btn" href="mailto:careers@tetrapharma.com?subject=Apply%20-%20Marketing%20Intern"
-           style="display:inline-block; padding:10px 14px; background:#0556a4; color:#fff; text-decoration:none; border-radius:6px;">
-          Apply Now
-        </a>
-      </article>
+      </div>
     </div>
 
-
-    <!-- General application -->
-    <div style="text-align:center; margin-top:28px; color:#444;">
-      Didn’t find your role?  
-      <a href="mailto:careers@tetrapharma.com?subject=Open%20Application" style="color:#d41943; text-decoration:none;">
-        Send a general application
-      </a>
-      and let’s stay connected.
+    <!-- TEAM PREVIEW -->
+    <div class="team">
+      <h2>Meet Our Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="../images/team1.jpg" alt="Team Member">
+          <h4>Dr. Sarah Ahmed</h4>
+          <p>Chief Scientific Officer</p>
+        </div>
+        <div class="team-member">
+          <img src="../images/team2.jpg" alt="Team Member">
+          <h4>Mohamed Ali</h4>
+          <p>Head of Operations</p>
+        </div>
+        <div class="team-member">
+          <img src="../images/team3.jpg" alt="Team Member">
+          <h4>Fatima Hassan</h4>
+          <p>Marketing Director</p>
+        </div>
+      </div>
     </div>
-  </div>
-      <img 
-  loading="lazy" 
-  decoding="async" 
-  width="352" 
-  height="375"
-  src="../images/new logo icon gray.png"
-  alt="logo watermark"
-  style="
-       opacity: 0.19;
-    filter: grayscale(100%) contrast(.8) brightness(1.1);
-    mix-blend-mode: multiply;
-    pointer-events: none;
-    transform: rotate(-10deg);
-    width: 22%;
-    height: auto;
-    position: absolute;
-    margin-top: -7rem;
-    right: 1rem;
-  "
-/>
-</section>
+  </section>
 
+  
 <!-- =============== FOOTER =============== -->
 <footer style="background:#f8fafc; position:relative;">
   <div style="max-width:1200px; margin:0 auto; padding:50px 18px;">

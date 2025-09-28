@@ -1,3 +1,19 @@
+// nav scroll
+		window.addEventListener('scroll', () => {
+				const nav = document.getElementById('mainNav');
+				const links = document.querySelectorAll('#mainNav a');
+
+				if (window.scrollY > 50) {
+					nav.classList.add('scrolled');          // ده اللي يلوّنهم أزرق من الـCSS
+					// لو عايزة إجبار اللون بالأستايل المباشر بدل الـCSS علشان أي !important قديم:
+					// links.forEach(a => a.style.color = '#1157a4');
+				} else {
+					nav.classList.remove('scrolled');       // يرجعهم أبيض
+					// links.forEach(a => a.style.color = '#fff');
+				}
+			}, { passive: true });
+
+
 // Simple carousel logic (safe init)
 window.addEventListener('DOMContentLoaded', () => {
   const slides = document.querySelectorAll('#tsl .slide');

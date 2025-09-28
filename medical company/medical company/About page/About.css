@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'LucidaCalligraphy';
+    src: url('./fonts/LucidaCalligraphy.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+       h1,h2,h3{
+           font-family: 'LucidaCalligraphy', cursive !important;
+       }
+
+}
+.Link_A{
+    color: #0556a4 !important;
+}
+.Link_A:hover{
+    color: rgb(154, 154, 155) !important;
+}
+.career{
+    color: #fff;
+    background-color: #0556a4 !important;
+}
+.career:hover{
+    color: #0556a4 !important;
+    background-color: #fff !important;
+    border: 1px solid #0556a4 !important;
+    transition: all ease 600ms !important;
+}
