@@ -15,3 +15,60 @@ nav a:hover{
     background-color: white !important;
     transition: all ease 600ms;
 }
+:root{
+  --active:#d6103d;         /* لون الـ active والـ hover */
+  --navText:#1f2937;        /* اللون العادي */
+}
+
+/* الأساسيات */
+.nav-wrap .nav .links .Link_A{
+  position:relative;
+  color:var(--navText);
+  text-decoration:none;
+  font-weight:700;
+  padding:10px 6px;
+  transition:color .2s ease;
+}
+
+/* الأندرلاين */
+.nav-wrap .nav .links .Link_A::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:-4px;
+  height:2px;
+  background:transparent;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .2s ease, background .2s ease;
+}
+
+/* hover = نفس لون الـ active */
+.nav-wrap .nav .links .Link_A:hover,
+.nav-wrap .nav .links .Link_A:focus-visible{
+  color:var(--active) !important;
+}
+.nav-wrap .nav .links .Link_A:hover::after,
+.nav-wrap .nav .links .Link_A:focus-visible::after{
+  background:var(--active) !important;
+  transform:scaleX(1);
+}
+
+/* حالة الـ active */
+.nav-wrap .nav .links .Link_A.active{
+  color:var(--active) !important;
+}
+.nav-wrap .nav .links .Link_A.active::after{
+  background:var(--active) !important;
+  transform:scaleX(1);
+}
+
+/* زر الكارير يفضل يفضل كزر مستقل */
+.nav-wrap .nav .links .cta.career{
+  margin-left:8px; padding:10px 16px;
+  border-radius:999px; background:#0f6efc;
+  color:#fff; border:1px solid #0f6efc;
+}
+.nav-wrap .nav .links .cta.career:hover{
+  background:var(--active);
+  border-color:var(--active);
+}

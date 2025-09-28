@@ -1,329 +1,332 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tetra Pharma — Product</title>
-
-<style>
-  /* ================== THEME TOKENS ================== */
-  :root{
-    --blue:#1157a4;
-    --pink:#d6103d;
-    --ink:#0e1a2b;
-    --text:#2a2f36;
-    --muted:#6b7480;
-    --paper:#f6f7fa;
-    --card:#ffffff;
-    --radius:16px;
-    --shadow:0 10px 28px rgba(0,0,0,.08);
-    --soft-shadow:0 8px 18px rgba(17,87,164,.08);
-    --grad:linear-gradient(90deg,var(--pink),#9a2aa9,#0556a4);
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0}
-  body{
-    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    color:var(--text);
-    background:#fff;
-  }
-
-  /* ================== NAVBAR ================== */
-  .nav{
-    position:fixed; inset:0 0 auto 0; height:70px;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:0 28px; z-index:1000;
-    background:#fff; border-bottom:1px solid #eef0f5;
-  }
-  .nav .brand{display:flex; align-items:center; gap:12px}
-  .nav .brand img{height:36px}
-  .nav .brand span{
-    font-family: "Times New Roman", Georgia, serif;
-    font-weight:700; letter-spacing:.2px; color:var(--ink);
-  }
-  .nav a{
-    text-decoration:none; color:var(--ink); font-weight:600; margin-left:18px;
-  }
-  .nav a:hover{color:var(--blue)}
-  .nav .cta{
-    margin-left:16px; padding:10px 16px; border-radius:999px; border:1px solid var(--blue);
-    color:#fff; background:var(--blue); font-weight:700;
-  }
-  .nav .cta:hover{filter:brightness(.95)}
-
-  /* ================== BREADCRUMB / HEADER ================== */
-  .hero{
-    padding:120px 22px 30px; /* 70px nav + breathing */
-    background: radial-gradient(1200px 400px at 60% -180px,#eaf2fb 0,transparent 60%),
-                radial-gradient(800px 360px at 10% -120px,#fde9ef 0,transparent 60%);
-  }
-  .shell{max-width:1200px; margin:0 auto}
-  .crumb{
-    color:var(--muted); font-size:14px; display:flex; gap:6px; align-items:center;
-  }
-  .crumb a{color:var(--muted); text-decoration:none}
-  .crumb a:hover{color:var(--blue)}
-  .p-title{
-    margin:10px 0 6px; font-size:38px; line-height:1.15;
-    font-family:"Times New Roman", Georgia, serif; color:var(--ink);
-  }
-  .p-sub{color:var(--muted); font-size:15px}
-  .under{
-    width:120px; height:4px; border-radius:4px; background:var(--grad); margin-top:14px;
-  }
-
-  /* ================== PRODUCT GRID ================== */
-  .grid{
-    display:grid; grid-template-columns: 1.2fr 1fr; gap:32px;
-    padding:26px 22px 18px;
-  }
-  @media (max-width: 980px){ .grid{grid-template-columns:1fr} }
-
-  /* Gallery */
-  .gallery{
-    background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow);
-    padding:18px;
-  }
-  .lg{
-    aspect-ratio: 4/3; width:100%; border-radius:12px; overflow:hidden;
-    background:var(--paper); box-shadow:var(--soft-shadow); display:flex; align-items:center; justify-content:center;
-  }
-  .lg img{width:100%; height:100%; object-fit:cover; display:block}
-  .thumbs{
-    margin-top:14px; display:grid; grid-template-columns:repeat(5,1fr); gap:10px;
-  }
-  .thumb{
-    border:2px solid transparent; border-radius:12px; overflow:hidden; cursor:pointer; background:var(--paper);
-    height:68px; display:flex; align-items:center; justify-content:center;
-  }
-  .thumb img{width:100%; height:100%; object-fit:cover; display:block}
-  .thumb.active{border-color:var(--blue)}
-
-  /* Details */
-  .panel{
-    background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow);
-    padding:24px;
-  }
-  .price{
-    display:flex; align-items:baseline; gap:10px; margin:0 0 8px;
-  }
-  .price .main{
-    font-size:26px; font-weight:800; color:var(--blue);
-  }
-  .chips{display:flex; gap:8px; flex-wrap:wrap; margin:10px 0 16px}
-  .chip{
-    padding:6px 10px; border-radius:999px; background:#eef4fb; color:var(--blue); font-weight:700; font-size:12px;
-  }
-  .lead{color:var(--text); line-height:1.6; margin:12px 0 18px}
-
-  .btns{display:flex; gap:12px; flex-wrap:wrap}
-  .btn{
-    display:inline-block; padding:12px 20px; border-radius:999px; text-decoration:none; font-weight:800;
-    box-shadow: var(--soft-shadow); transition: transform .18s ease, filter .2s ease;
-  }
-  .btn:hover{transform: translateY(-1px)}
-  .btn.primary{ background:var(--blue); color:#fff;}
-  .btn.secondary{ background:var(--pink); color:#fff;}
-
-  .meta{
-    margin-top:20px; display:grid; grid-template-columns:repeat(2,1fr); gap:12px;
-  }
-  .meta .card{
-    background:var(--paper); padding:14px 16px; border-radius:12px;
-    color:var(--text); font-size:14px;
-  }
-  .meta .title{font-weight:800; color:var(--ink); margin-bottom:6px}
-
-  /* ================== INFO CARDS (Usage/Doses/Warnings) ================== */
-  .info{
-    padding:16px 22px 34px; display:grid; grid-template-columns:repeat(3,1fr); gap:22px;
-  }
-  @media (max-width:980px){ .info{grid-template-columns:1fr} }
-  .ibox{
-    background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow);
-    padding:22px;
-  }
-  .ibox h3{
-    margin:0 0 10px; font-family:"Times New Roman", Georgia, serif; color:var(--ink);
-  }
-  .ibox p{margin:0; color:var(--text); line-height:1.7}
-  .ibox ul{margin:10px 0 0 18px; padding:0; color:var(--text)}
-  .ibox li{margin:6px 0}
-
-  /* ================== FOOTER ================== */
-  .footer{
-    background:#0b2040; color:#cfd7e6; padding:28px 22px; margin-top:16px;
-  }
-  .foot-grid{max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.2fr 1fr; gap:20px}
-  @media (max-width:900px){ .foot-grid{grid-template-columns:1fr} }
-  .foot-logo{display:flex; align-items:center; gap:12px; color:#fff}
-  .foot-logo img{height:34px}
-  .copy{margin-top:6px; font-size:14px; color:#9fb3cc}
-  .foot-right{display:grid; gap:8px; align-content:center}
-  .foot-right a{color:#cfd7e6; text-decoration:none}
-  .foot-right a:hover{color:#fff}
-      /* About page styles */
-    .about-hero {
-      background: linear-gradient(rgba(17, 87, 164, 0.7), rgba(17, 87, 164, 0.7)), url("../images/about-bg.jpg") center/cover no-repeat;
-      color: #fff;
-      text-align: center;
-      padding: 120px 20px;
-    }
-    .about-hero h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
-    }
-    .about-section {
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-    .about-section h2 {
-      font-size: 2rem;
-      color: #1157a4;
-      margin-bottom: 20px;
-    }
-    .about-section p {
-      font-size: 1.1rem;
-      color: #444;
-      line-height: 1.8;
-      margin-bottom: 30px;
-    }
-    .mission-vision {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    .mv-card {
-      background: #f8f9fa;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
-    }
-    .mv-card:hover {
-      transform: translateY(-6px);
-    }
-    .mv-card h3 {
-      color: #d6103d;
-      margin-bottom: 15px;
-    }
-    .team {
-      margin-top: 60px;
-    }
-    .team-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .team-member {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      width: 250px;
-      text-align: center;
-      padding: 20px;
-    }
-    .team-member img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
-    .team-member h4 {
-      margin-bottom: 8px;
-      color: #1157a4;
-    }
-    .team-member p {
-      font-size: 0.95rem;
-      color: #555;
-    }
-</style>
-<link rel="stylesheet" href="About.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tetra Pharma — About</title>
+  <link rel="stylesheet" href="./About.css" />
 </head>
+
 <body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">
+        <!-- <span class="mark">TP</span> -->
+        <div class="brand">
+          <img class="LogoImg" src="../images/new logo.png" alt="Tetra Pharma" />
+        </div>
+      </a>
 
-<!-- ================== NAV ================== -->
-<header class="nav">
-  <div class="brand">
-    <img src="../images/new logo.png" alt="Tetra Pharma" />
+      <!-- Mobile toggle -->
+      <input id="nav-toggle" type="checkbox" aria-label="Toggle navigation">
+      <label for="nav-toggle" class="burger" aria-hidden="true"><span></span><span></span><span></span></label>
 
-  </div>
-  <nav>
-       <a class="Link_A" href="../index.html" target="_blank">Home</a>
-        <a class="Link_A" href="./About.html"  target="_blank">About</a>
-        <a class="Link_A" href="../ProductPage/product.html">Products</a>
-        <a class="Link_A" href="#" target="_blank">FAQ</a>
-        <a class="Link_A" href="../contactPage/contact.html" target="_blank">Contact</a>
-        <a class="Link_A" href="../Blog page/Blog.html"  target="_blank">Blogs</a>
-        <a class=" cta career" href="../career page/career.html"  target="_blank">Career</a>
-  </nav>
-</header>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="./About.html" class="active">About</a>
+        <a href="../ProductPage/product.html">Products</a>
+        <a href="#">FAQ</a>
+        <a href="../contactPage/contact.html">Contact</a>
+        <a href="../Blog page/Blog.html">Blogs</a>
+        <a href="../career page/career.html" class="btn cta">Career</a>
+      </nav>
+    </div>
+  </header>
 
   <!-- HERO -->
-  <section class="about-hero">
-    <h1>About Us <br/><span style="color: #d6103d;">Tetra Pharma</span></h1>
-    <p>Delivering trusted healthcare solutions with innovation and quality.</p>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow color_red">Tetra Pharma</span>
+        <h1 class="color_blue">About Us</h1>
+        <p class="lead">
+          We pioneer science-backed wellness for Egyptians through high-quality, research-driven
+          pharmaceuticals and food supplements tailored to local needs.
+        </p>
+
+        <ul class="quick-links">
+          <li><a class="color_blue">Our Story</a></li>
+          <li><a class="color_blue">Vision & Mission</a></li>
+          <li><a class="color_blue">Core Values</a></li>
+        </ul>
+
+        <div class="kpis">
+          <span class="pill">20+ Years</span>
+          <span class="pill">Science-First</span>
+          <span class="pill">Trusted by HCPs</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img src="../images/new logo icon gray.png" alt="logo watermark" style="
+    opacity: 0.19; 
+    filter: grayscale(100%) contrast(.8) brightness(1.1); 
+    mix-blend-mode: multiply; 
+    pointer-events: none; 
+    transform: rotate(-10deg); 
+    width: 120px;   
+    height: auto;  
+  " />
+
+        <div class="quote">
+          “Since its inception, Tetra Pharma has been committed to making a real difference
+          in people’s lives. We were among the first to introduce the concept of antioxidants
+          in Egypt—transforming how the community perceived preventive health.”
+        </div>
+        <div class="logo-line">
+          <span class="dot"></span>
+          <span class="rule"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- ABOUT CONTENT -->
-  <section class="about-section">
-    <h2>Who We Are</h2>
-    <p>
-      Tetra Pharma is a science-driven pharmaceutical company dedicated to providing innovative
-      healthcare solutions. With a strong commitment to research, quality, and patient care, 
-      we aim to make effective treatments accessible and reliable for everyone.
-    </p>
+  <!-- STORY + CEO -->
+<section class="section about-cards" id="story">
+  <div class="container ac-grid">
+    <!-- Card 1: Our Story -->
+    <article class="ac-card">
+      <div class="ac-head">
+        <span class="ac-badge">Our Story</span>
+        <h3 class="ac-title">A pioneering journey in Egyptian health</h3>
+      </div>
 
-    <div class="mission-vision">
-      <div class="mv-card">
-        <h3>Our Mission</h3>
+      <!-- المحتوى القابل للطي/التوسيع -->
+      <div class="ac-body">
         <p>
-          	To leverage cutting-edge scientific research to develop a diverse range of high-quality, science-backed food supplements that address the specific health needs of Egyptians.<br/>
-	          To raise awareness about the importance of proactive health management through education and community engagement.<br/>
-            To foster a culture of trust and transparency, providing consumers with clear information about our products and ingredients.<br/>
-	          To be a responsible corporate citizen, committed to sustainable practices and giving back to the Egyptian community<br/>
+          A Legacy of Innovation: Tetra Pharma’s story is one of trailblazing and a relentless
+          pursuit of better health for Egyptians. We weren’t just another supplement company;
+          we were the first to introduce the concept of antioxidants to the Egyptian market.
+          This revolutionary step changed the landscape of health awareness, empowering Egyptians
+          to take a proactive approach to their well-being.
+        </p>
+
+        <h4 class="ac-sub">The Birth of Selenium ACE:</h4>
+        <p>
+          Driven by a deep commitment to scientific research, our UK principal partner, Wassen
+          International, meticulously crafted Selenium ACE, a potent antioxidant formula.
+          This groundbreaking product quickly became the undisputed leader in its category,
+          earning the trust and loyalty of Egyptians doctors and pharmacists as well as millions
+          of Egyptians.
+        </p>
+
+        <div class="ac-note">
+          <strong>Your partner in health:</strong> For more than two decades, Tetra Pharma has
+          invested in R&amp;D with global collaborators in the UK and South Africa to deliver
+          innovative, effective solutions.
+        </div>
+      </div>
+
+      <button class="ac-toggle" aria-expanded="false" type="button">See more</button>
+    </article>
+
+    <!-- Card 2: CEO Message -->
+    <article class="ac-card">
+      <div class="ac-head">
+        <span class="ac-badge">CEO Message</span>
+        <h3 class="ac-title">Committed to innovation, growth, and trust</h3>
+      </div>
+
+      <div class="ac-body">
+        <p>
+          Pioneering innovation that creates value for all our stakeholders, with an
+          undeterred focus on customer delight is at the core of “Tetra Pharma for
+          Pharmaceuticals &amp; Food Supplement Co LTD” mindset. As its CEO, I want to
+          take this opportunity to emphasize… First and foremost, I want to thank all of
+          “Tetra Pharma Co LTD” team for their loyalty and support towards their company
+          over the years. We are committed to providing you with the highest quality
+          offerings that meet and exceed your expectations at every step possible.
+        </p>
+        <p>
+          Existing in the pharma market 30 years ago gets me to fully understand the industry
+          business, and its customers’ needs. We are obsessed by driving innovation and success
+          across organizations in all the business tracks. As we embark upon this next phase of
+          growth for “Tetra Pharma Co LTD” my priority will be to work with the talented team to
+          strengthen our offerings and ensure that we are creating immense value to our customers
+          to become their most preferred partner in the areas of transforming, pioneer &amp; healing
+          our valuable customers.
+        </p>
+        <p>
+          We will continue to invest in cutting-edge technologies, collaborate with our partners,
+          and listen to feedback to ensure we are delivering the solutions that help you excel.
+        </p>
+        <p class="ac-byline">— CEO, Tetra Pharma</p>
+      </div>
+
+      <button class="ac-toggle" aria-expanded="false" type="button">See more</button>
+    </article>
+  </div>
+</section>
+
+  <!-- VISION / MISSION / SNAPSHOT -->
+  <section class="section muted" id="vision">
+    <div class="container grid-3">
+      <div class="card">
+        <span class="badge color_blue">Vision</span>
+        <p class="color_black">In collaboration with its renowned international partners,  to be the leading innovator in the Egyptian food supplement industry, empowering Egyptians to achieve optimal health and well-being throughout their lives.<br/>
+          To continuously redefine the standards of quality and efficacy in Egyptian supplements, setting a benchmark for the entire region.
 
         </p>
       </div>
-      <div class="mv-card">
-        <h3>Our Vision</h3>
-        <p style="    text-align: start;">
-         	In collaboration with its renowned international partners,  to be the leading innovator in the Egyptian food supplement industry, empowering Egyptians to achieve optimal health and well-being throughout their lives.<br/>
-         	To continuously redefine the standards of quality and efficacy in Egyptian supplements, setting a benchmark for the entire region.
-
-        </p>
+      <div class="card">
+        <span class="badge color_blue">Mission</span>
+        <p class="color_black">To leverage cutting-edge scientific research to develop a diverse range of high-quality, science-backed food supplements that address the specific health needs of Egyptians.<br/>
+	     To raise awareness about the importance of proactive health management through education and community engagement.<br/>
+       To foster a culture of trust and transparency, providing consumers with clear information about our products and ingredients.<br/>
+	     To be a responsible corporate citizen, committed to sustainable practices and giving back to the Egyptian community.
+</p>
       </div>
-    </div>
-
-    <!-- TEAM PREVIEW -->
-    <div class="team">
-      <h2>Meet Our Team</h2>
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="../images/team1.jpg" alt="Team Member">
-          <h4>Dr. Sarah Ahmed</h4>
-          <p>Chief Scientific Officer</p>
-        </div>
-        <div class="team-member">
-          <img src="../images/team2.jpg" alt="Team Member">
-          <h4>Mohamed Ali</h4>
-          <p>Head of Operations</p>
-        </div>
-        <div class="team-member">
-          <img src="../images/team3.jpg" alt="Team Member">
-          <h4>Fatima Hassan</h4>
-          <p>Marketing Director</p>
-        </div>
+      <div class="card mini-list">
+        <span class="badge color_blue">At a glance</span>
+        <ul>
+          <li class="color_black">Trusted by doctors & pharmacists</li>
+          <li class="color_black">Global R&amp;D collaborations</li>
+          <li class="color_black">Premium ingredients • strict QA</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  
-<!-- =============== FOOTER =============== -->
-<footer style="background:#f8fafc; position:relative;">
+  <!-- VALUES -->
+
+<section class="cv-section" id="core-values">
+  <div class="cv-container">
+    <div class="cv-head">
+      <span class="cv-badge color_blue">Core Values</span>
+      <h2 class="cv-title color_blue">The principles that guide our work</h2>
+    </div>
+
+    <div class="cv-grid">
+      <!-- 1 -->
+      <article class="cv-item">
+        <div class="cv-icon" aria-hidden="true">
+          <!-- Star (pioneering) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 3l2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.8 1-6.1-4.4-4.3 6.1-.9L12 3z"/>
+          </svg>
+        </div>
+        <div class="cv-text">
+          <h3>Pioneering Spirit</h3>
+          <p>Relentless innovation to improve Egyptians’ health and well-being.</p>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="cv-item">
+        <div class="cv-icon" aria-hidden="true">
+          <!-- Flask (science-based) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10 2v5l-6 10a3 3 0 0 0 2.6 5h10.8a3 3 0 0 0 2.6-5L14 7V2"/>
+            <path d="M8 12h8M7 15h10"/>
+          </svg>
+        </div>
+        <div class="cv-text">
+          <h3>Science-Based Approach</h3>
+          <p>Research-driven formulas, rigorous testing, and transparent results.</p>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="cv-item">
+        <div class="cv-icon" aria-hidden="true">
+          <!-- Flag on pole (Egyptian-centric) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 3v18"/>
+            <path d="M4 4h10l-2 3 2 3H4z"/>
+          </svg>
+        </div>
+        <div class="cv-text">
+          <h3>Egyptian-Centric Focus</h3>
+          <p>Products designed for local needs, plus education and outreach.</p>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="cv-item">
+        <div class="cv-icon" aria-hidden="true">
+          <!-- Check-square (quality) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="3" ry="3"/>
+            <path d="M8 12l3 3 5-5"/>
+          </svg>
+        </div>
+        <div class="cv-text">
+          <h3>Unwavering Quality</h3>
+          <p>Meticulous sourcing and strict manufacturing standards.</p>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="cv-item">
+        <div class="cv-icon" aria-hidden="true">
+          <!-- Shield (trust) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2l8 3v6c0 5.5-3.4 9.6-8 11-4.6-1.4-8-5.5-8-11V5l8-3z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </div>
+        <div class="cv-text">
+          <h3>Customer Trust</h3>
+          <p>Openness, clear information, and support at every step.</p>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="cv-item">
+        <div class="cv-icon" aria-hidden="true">
+          <!-- Globe (partners) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/>
+          </svg>
+        </div>
+        <div class="cv-text">
+          <h3>Choosing our Partners</h3>
+          <p>Renowned international partners to deliver best-in-class solutions.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="cv-actions">
+      <a class="cv-btn primary blue_btn" href="products.html">Explore our products</a>
+      <a class="cv-btn light color_blue" href="blog.html">Read our latest blogs</a>
+    </div>
+  </div>
+</section>
+
+  <!-- CTA -->
+  <section class="section contact-cta">
+    <div class="container grid-2">
+      <div class="card">
+        <h3 class="color_blue">Questions we get a lot</h3>
+        <details open>
+          <summary class="color_red">Are Tetra Pharma supplements science-based?</summary>
+          <p class="color_gray">Yes. We rely on peer-reviewed research, clinical evidence, and strict QA to design and validate each
+            formula.</p>
+        </details>
+        <details>
+          <summary class="color_red">Where are your products manufactured?</summary>
+          <p class="color_gray">We audit every facility and supplier and manufacture under stringent standards for quality and safety.</p>
+        </details>
+        <details>
+          <summary class="color_red">Do you collaborate internationally?</summary>
+          <p class="color_gray">We partner with respected global organizations (R&amp;D and QA) to ensure world-class outcomes.</p>
+        </details>
+      </div>
+
+      <div class="card align-center">
+        <h3 class="color_red">We’d love to hear from you</h3>
+        <p class="muted-txt">Have a question about a product or partnership?</p>
+        <a class="btn primary blue_btn" href="../contactPage/contact.html">Contact us</a>
+      </div>
+    </div>
+  </section>
+
+ <!-- =============== FOOTER =============== -->
+<footer style="background:#f8fafc; position:relative; margin-top:60px;">
   <div style="max-width:1200px; margin:0 auto; padding:50px 18px;">
     <div style="
       display:grid; gap:28px;
@@ -359,7 +362,7 @@
           <div style="font-weight:700; color:#0f172a; margin-bottom:10px;">Social</div>
           <div style="display:flex; gap:12px; flex-wrap:wrap;">
             <a href="https://www.facebook.com/tetrapharmaltd/" style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">Facebook</a>
-            <a href="https://www.instagram.com/tetra_pharma" style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">Instagram</a>
+            <a href="https://www.instagram.com/tetra_pharma/" style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">Instagram</a>
             <a href="#" style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">TikTok</a>
             <a href="#" style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">LinkedIn</a>
           </div>
@@ -367,7 +370,7 @@
 
         <!-- Career CTA -->
         <div style="margin-top:10px;">
-          <div style="font-weight:600; color:#0f172a; font-size:20px; margin-bottom:10px;">Build your Career</div>
+          <div style="font-weight:800; color:#0f172a; font-size:20px; margin-bottom:10px;">Build your Career</div>
           <a href="../career page/career.html" style="
             display:inline-block; text-decoration:none; 
             background:linear-gradient(135deg,#1157a4,#0d4a8c);
@@ -441,20 +444,33 @@
 </footer>
 <!-- ============ /FOOTER ============ -->
 
-<script>
-  // يحدّث سنة الحقوق تلقائياً
-  (function(){ 
-    var el=document.getElementById('y_foot'); 
-    if(el) el.textContent = new Date().getFullYear(); 
-  })();
+
+
+  <!-- Make active link automatic (optional) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const current = (location.pathname || '').toLowerCase();
+      document.querySelectorAll('.nav a[href]').forEach(a => {
+        const href = a.getAttribute('href').toLowerCase();
+        if (current.endsWith(href) || (href.includes('about') && current.includes('about'))) {
+          a.classList.add('active');
+        }
+      });
+    });
+  </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.ac-card .ac-toggle').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        const card = btn.closest('.ac-card');
+        const open = card.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.textContent = open ? 'See less' : 'See more';
+      });
+    });
+  });
 </script>
 
-<!-- Responsive tweak -->
-<style>
-@media (max-width: 900px){
-  footer > div > div { grid-template-columns:1fr !important; }
-}
-</style>
-
 </body>
+
 </html>

@@ -27,3 +27,75 @@ body{
 .Link_A:hover{
     color: rgb(154, 154, 155) !important;
 }
+:root{
+  --navText:#1f2937;     /* اللون العادي */
+  --active:#d6103d;      /* لون الـactive والـhover */
+  --cta:#0f6efc;         /* لون زر الكارير الافتراضي */
+}
+
+/* الروابط العادية في الناف */
+header.nav nav a.Link_A{
+  position: relative;
+  color: var(--navText);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 6px;
+  transition: color .2s ease;
+}
+
+/* أندرلاين يظهر في الهوفر والـactive */
+header.nav nav a.Link_A::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:-4px;
+  height:2px;
+  background:transparent;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .2s ease, background .2s ease;
+}
+
+/* hover = نفس لون الـactive */
+header.nav nav a.Link_A:hover,
+header.nav nav a.Link_A:focus-visible{
+  color: var(--active) !important;
+}
+header.nav nav a.Link_A:hover::after,
+header.nav nav a.Link_A:focus-visible::after{
+  background: var(--active) !important;
+  transform: scaleX(1);
+}
+
+/* حالة الـactive */
+header.nav nav a.Link_A.active{
+  color: var(--active) !important;
+}
+header.nav nav a.Link_A.active::after{
+  background: var(--active) !important;
+  transform: scaleX(1);
+}
+
+/* زر الكارير كزرار */
+header.nav nav a.cta.career{
+  margin-left: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--cta);
+  color: #fff !important;
+  border: 1px solid var(--cta);
+}
+/* ملوش أندرلاين */
+header.nav nav a.cta.career::after{ display:none; }
+
+/* الكارير لما يكون active يبقى أحمر */
+header.nav nav a.cta.career.active{
+  background: var(--active);
+  border-color: var(--active);
+  color: #fff !important;
+}
+/* والهوفر عليه كمان أحمر */
+header.nav nav a.cta.career:hover{
+  background: var(--active);
+  border-color: var(--active);
+  color: #fff !important;
+}

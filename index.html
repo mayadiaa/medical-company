@@ -238,17 +238,24 @@
 		</nav>
 
 		<!-- HERO VIDEO -->
-		<section id="hero">
-			<div class="headerImg">
-				<img class="heroImg" src="./images/3c6bc858-eb67-445c-b0fa-2f2b13890550.jpg">
-			</div>
-			<!-- <video src="images/video.mp4" autoplay muted loop playsinline></video> -->
-			<div class="content">
-				<h1 class="heroContent">Your Health, Our Mission</h1>
-				<p class="heroContent">Tetra Pharma</p>
-				<a href="./ProductPage/product.html" class="btn">Explore Our Products</a>
-			</div>
-		</section>
+	<div style="position:relative;height:100vh;overflow:hidden;">
+  <video autoplay muted loop playsinline 
+         style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+    <source src="./images/video1 (1).mp4" type="video/mp4" />
+  </video>
+
+  <!-- فلتر أسود -->
+  <div style="position:absolute;top:0;left:0;width:100%;height:100%;
+              background:rgba(0, 0, 0, 0.562);pointer-events:none;"></div>
+
+  <!-- نص فوق الفيديو (اختياري) -->
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+              color:#fff;text-align:center;z-index:1;">
+    <h1 style="font-size:40px;margin:0; color: white;">Your Health, Our Mission</h1>
+    <p style="font-size:18px;margin:10px 0 0; color: white;">Tetra Pharma</p>
+	<button class="btn">Explore Our Products</button>
+  </div>
+</div>
 	</header>
 
        <div class="container">
