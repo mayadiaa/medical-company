@@ -503,7 +503,7 @@ summary::-webkit-details-marker{display:none}
         padding:10px 14px; 
         border-radius:10px;
         background:#1157a4; 
-        color:#fff; 
+        color:#fff !important ; 
         display:inline-block;
 }
 .bottomBar{
