@@ -6,24 +6,17 @@
 }
 
 @font-face {
-    font-family: 'LucidaCalligraphy';
-    src: url('./fonts/LucidaCalligraphy.TTF') format('truetype');
-    font-weight: normal;
+    font-family: 'Playfair Display';
+    src: url('Playfair Display') format('truetype');
+    font-weight: 400;
     font-style: normal;
 }
 
 body {
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    Tetra_P {
-        font-family: 'LucidaCalligraphy', cursive !important;
+    h1,h2,h3,h4,h5,h6,p{
+        font-family: 'Playfair Display' !important;
     }
-
 
 }
 
@@ -1513,3 +1506,38 @@ body .aheto-footer a {
         background-image: none !important;
     }
 }
+/* أساس الأندرلاين (لو مش موجود عندك) */
+#mainNav .links a{
+  position: relative;
+  text-decoration: none;
+  font-weight: 700;
+}
+#mainNav .links a::after{
+  content:"";
+  position:absolute; left:0; right:0; bottom:-6px;
+  height:2px; background:transparent;
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .2s ease, background .2s ease;
+}
+
+/* === Home ثابت بلون #d6103d مع أندرلاين بنفس اللون === */
+#mainNav .links a[href$="index.html"]{
+  color:#d6103d !important;
+}
+#mainNav .links a[href$="index.html"]::after{
+  background:#d6103d !important;
+  transform:scaleX(1);
+}
+
+/* (اختياري) خلي الـhover لأي لينك نفس لون الأكتيف */
+#mainNav .links a:hover,
+#mainNav .links a:focus-visible{
+  color:#d6103d;
+}
+#mainNav .links a:hover::after,
+#mainNav .links a:focus-visible::after{
+  background:#d6103d; transform:scaleX(1);
+}
+
+/* زر Career يفضل زرار بدون أندرلاين */
+#mainNav .links .career_btn::after{ display:none; }

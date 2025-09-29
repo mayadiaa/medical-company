@@ -224,18 +224,18 @@
 	<header id="masthead" itemscope="itemscope" itemtype="https://schema.org/WPHeader" class="aheto-header  ">
 		<!-- ===== Navbar Transparent on Video & Sticky on Scroll ===== -->
 		<!-- NAVBAR -->
-		<nav id="mainNav">
-			<div class="logo"><img class="navImg"src="./images/new logo.png"></div>
-			<div class="links">
-				<a href="../index.html">Home</a>
-				<a href="./About page/About.html">About</a>
-				<a href="./ProductPage/product.html">Products</a>
-				<a href="index.html#faq">FAQ</a>
-				<a href="./contactPage/contact.html">Contact</a>
-				<a href="index.html#blogs">Blogs</a>
-				<a class="career_btn" href="./career page/career.html" target="_blank">Career</a>
-			</div>
-		</nav>
+<nav id="mainNav">
+  <div class="logo"><img class="navImg" src="./images/new logo.png" alt="Tetra Pharma"></div>
+  <div class="links">
+    <a href="../index.html" class="active">Home</a>
+    <a href="./About page/About.html">About</a>
+    <a href="./ProductPage/product.html">Products</a>
+    <a href="./FaqPage/Faq.html">FAQ</a>
+    <a href="./contactPage/contact.html">Contact</a>
+    <a href="index.html#blogs">Blogs</a>
+    <a class="career_btn" href="./career page/career.html" target="_blank">Career</a>
+  </div>
+</nav>
 
 		<!-- HERO VIDEO -->
 	<div style="position:relative;height:100vh;overflow:hidden;">
@@ -253,7 +253,7 @@
               color:#fff;text-align:center;z-index:1;">
     <h1 style="font-size:40px;margin:0; color: white;">Your Health, Our Mission</h1>
     <p style="font-size:18px;margin:10px 0 0; color: white;">Tetra Pharma</p>
-	<button class="btn">Explore Our Products</button>
+	<a href="./ProductPage/product.html"><button class="btn">Explore Our Products</button></a>
   </div>
 </div>
 	</header>
@@ -403,7 +403,7 @@
 														class="aheto-heading aheto-heading--main  align-tablet-default align-mob-default aheto_heading_68caa797bf65c ">
 
 
-														<p class="aheto-heading__title text-indent">Since its inception,
+														<p class="about_p" style="font-size: larger !important;">Since its inception,
 															Tetra Pharma has been committed to making a real difference
 															in people’s lives through innovative pharmaceutical and
 															nutritional products. We were among the first to introduce
@@ -1161,6 +1161,7 @@
 								<div class="bf-body">
 									<h3 class="bf-title" style="color: #0556a4;">The Future of Generic Medicines</h3>
 									<p class="bf-text">
+										The Future of Generic Medicines
 										Generics make high-quality treatment accessible to millions. How do we
 										ensure safety, efficacy, and affordability while scaling for impact?
 									</p>
@@ -1432,9 +1433,11 @@
 											style="margin:10px 0 12px;font-size:18px;line-height:1.4;color:#1f2937;font-weight:700;">
 											Tetra Pharma launches Selenium ACE in a convenient new pack size
 										</h3>
+										<a href="./news page/news.html">
 										<span class="NewBtn">
 											Read more
 										</span>
+										</a>
 									</div>
 								</a>
 							</article>
@@ -1455,9 +1458,11 @@
 											style="margin:10px 0 12px;font-size:18px;line-height:1.4;color:#1f2937;font-weight:700;">
 											Tetra Pharma announces upcoming product — Coming Soon
 										</h3>
+									<a href="./news page/news.html">
 										<span class="NewBtn">
 											Read more
 										</span>
+										</a>
 									</div>
 								</a>
 							</article>
@@ -1476,11 +1481,13 @@
 											style="font-size:13px;color:#6b7280;">10.9.2025</time>
 										<h3
 											style="margin:10px 0 12px;font-size:18px;line-height:1.4;color:#1f2937;font-weight:700;">
-											Reliable supply and GMP-grade quality — quarterly</br> update
+											Reliable supply and GMP-grade quality
 										</h3>
+										<a href="./news page/news.html">
 										<span class="NewBtn">
 											Read more
 										</span>
+										</a>
 									</div>
 								</a>
 							</article>
@@ -2519,11 +2526,14 @@
 	<script src="index.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 	<script>
-		AOS.init({
-			duration: 1000,   // مدة الأنيميشن بالمللي ثانية
-			once: true        // يخلي الأنيميشن يشتغل مرة واحدة بس
-		});
-	</script>
+document.addEventListener('DOMContentLoaded', () => {
+  const p = location.pathname.toLowerCase();
+  if (p.endsWith('/') || p.endsWith('/index.html')) {
+    document.querySelector('#mainNav .links a[href$="index.html"]')?.classList.add('active');
+  }
+});
+</script>
+
 </body>
 
 </html>

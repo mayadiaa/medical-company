@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tetra Pharma — FAQ</title>
+  <link rel="stylesheet" href="faq.css" />
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="mainNav">
+  <div class="logo">
+    <img class="navImg" src="../images/new logo.png" alt="Tetra Pharma" />
+  </div>
+  <div class="links">
+    <a href="../index.html" target="_blank">Home</a>
+    <a href="../About page/About.html" target="_blank">About</a>
+    <a href="../ProductPage/product.html" target="_blank">Products</a>
+    <!-- خليها تشير لصفحة FAQ مباشرة -->
+    <a href="./Faq.html" target="_blank" class="active">FAQ</a>
+    <a href="../contactPage/contact.html" target="_blank">Contact</a>
+    <a href="../Blog page/Blog.html" target="_blank">Blogs</a>
+    <a class="career_btn" href="./career page/career.html" target="_blank">Career</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="container">
+    <h1 class="color_blue">Frequently Asked Questions</h1>
+    <p class="breadcrumb"><a href="../index.html" target="_blank">Home</a> / FAQ</p>
+    <p class="lead">Answers to common questions about our products, quality, usage, and partnerships. If you don’t find what you’re looking for, reach out—we’re here to help.</p>
+  </div>
+</section>
+
+<!-- ===== FAQ CONTENT ===== -->
+<section>
+  <div class="container faq-wrap">
+    <!-- Sidebar -->
+    <aside class="faq-side">
+      <h3>Need more help?</h3>
+      <p class="mini">Our team is happy to assist you with product selection, safety, or business inquiries.</p>
+      <div class="faq-cta">
+        <a class="btn primary blue_btn" href="../contactPage/contact.html">Contact us</a>
+        <a class="btn light color_blue" href="../Blog page/Blog.html">Read our blogs</a>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <div>
+      <div class="faq-controls">
+        <div class="search" style="flex:1 1 auto; max-width:520px;">
+          <span class="sfx">🔎</span>
+          <input id="faqSearch" type="search" placeholder="Search in questions..." />
+        </div>
+
+        <div class="tools">
+          <button id="expandAll" class="btn light color_blue" type="button">Expand all</button>
+          <button id="collapseAll" class="btn light color_blue" type="button">Collapse all</button>
+        </div>
+      </div>
+
+      <div class="faq">
+        <!-- Science / Quality -->
+        <details data-tags="science,quality" open>
+          <summary><span class="dot"></span> Are Tetra Pharma supplements science-based?</summary>
+          <div class="content">
+            Yes. We rely on peer-reviewed research, clinical evidence, and strict QA to design and validate each formula.
+          </div>
+        </details>
+
+        <details data-tags="manufacturing,quality">
+          <summary><span class="dot"></span> Where are your products manufactured?</summary>
+          <div class="content">
+            We manufacture under stringent standards and audit every facility and supplier for quality and safety.
+          </div>
+        </details>
+
+        <details data-tags="partnerships,rd">
+          <summary><span class="dot"></span> Do you collaborate internationally?</summary>
+          <div class="content">
+            We partner with respected global organizations (e.g., R&amp;D and QA consultants) to ensure world-class outcomes.
+          </div>
+        </details>
+
+        <!-- Usage -->
+        <details data-tags="usage,products">
+          <summary><span class="dot"></span> How should I choose between Selenium ACE and Omega products?</summary>
+          <div class="content">
+            Selenium ACE focuses on antioxidant support; Omega-3/6 supports heart, brain, and eye health. Your pharmacist or physician can advise which fits your needs.
+          </div>
+        </details>
+
+        <details data-tags="safety,usage">
+          <summary><span class="dot"></span> Can I take your supplements with my current medication?</summary>
+          <div class="content">
+            Always consult your healthcare professional before combining supplements with prescription medications, especially for chronic conditions.
+          </div>
+        </details>
+
+        <!-- Ordering / Availability -->
+        <details data-tags="availability,orders">
+          <summary><span class="dot"></span> Where can I find your products?</summary>
+          <div class="content">
+            Our products are available via leading pharmacies and distributors across Egypt. For a specific item, contact us and we’ll guide you to the nearest point of sale.
+          </div>
+        </details>
+
+        <details data-tags="storage,quality">
+          <summary><span class="dot"></span> What’s the best way to store supplements?</summary>
+          <div class="content">
+            Store in a cool, dry place away from direct sunlight. Always check the label for product-specific storage instructions.
+          </div>
+        </details>
+      </div>
+
+      <!-- Filter chips -->
+      <div class="faq-controls" style="margin-top:14px">
+        <span class="chip" data-tag="science">Science</span>
+        <span class="chip" data-tag="quality">Quality</span>
+        <span class="chip" data-tag="usage">Usage</span>
+        <span class="chip" data-tag="safety">Safety</span>
+        <span class="chip" data-tag="availability">Availability</span>
+        <span class="chip" data-tag="orders">Orders</span>
+        <span class="chip" data-tag="rd">R&amp;D</span>
+        <span class="chip" data-tag="partnerships">Partnerships</span>
+      </div>
+    </div>
+  </div>
+</section>
+ <!-- =============== FOOTER =============== -->
+<footer style="background:#f8fafc; position:relative; margin-top:60px;">
+  <div style="max-width:1200px; margin:0 auto; padding:50px 18px;">
+    <div style="
+      display:grid; gap:28px;
+      grid-template-columns: 1.1fr 1fr;
+    ">
+
+      <!-- LEFT: brand + contact + socials + career -->
+      <div>
+        <!-- Logo + name -->
+        <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
+          <img src="../images/new logo.png" alt="Tetra Pharma" style="height:38px; width:auto;">
+          <h3 style="margin:0; font-size:24px; color:#d61d49;">Tetra Pharma</h3>
+        </div>
+
+        <!-- Contact blocks -->
+        <ul style="list-style:none; padding:0; margin:0 0 18px 0; color:#334155;">
+          <li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
+            <span style="color:#1157a4;">📍</span>
+            <span>13 Hessein shafik el masry street , Cairo, Egypt</span>
+          </li>
+          <li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
+            <span style="color:#1157a4;">📞</span>
+            <a href="tel:+20123456789" style="color:#334155; text-decoration:none;">+20 10 60802711</a>
+          </li>
+          <li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
+            <span style="color:#1157a4;">✉️</span>
+            <a href="mailto:info@tetrapharma.com" style="color:#334155; text-decoration:none;">info@tetrapharma-eg.com</a>
+          </li>
+        </ul>
+
+        <!-- Social -->
+        <div style="margin:16px 0 24px 0;">
+          <div style="font-weight:700; color:#0f172a; margin-bottom:10px;">Social</div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="https://www.facebook.com/tetrapharmaltd/" style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">Facebook</a>
+            <a href="https://www.instagram.com/tetra_pharma/" style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">Instagram</a>
+            <a href="#" style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">TikTok</a>
+            <a href="#" style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">LinkedIn</a>
+          </div>
+        </div>
+
+        <!-- Career CTA -->
+        <div style="margin-top:10px;">
+          <div style="font-weight:800; color:#0f172a; font-size:20px; margin-bottom:10px;">Build your Career</div>
+          <a href="../career page/career.html" style="
+            display:inline-block; text-decoration:none; 
+            background:linear-gradient(135deg,#1157a4,#0d4a8c);
+            color:#fff; font-weight:700; padding:12px 18px; border-radius:14px;
+            box-shadow:0 8px 20px rgba(17,87,164,.18);
+            transition: transform .18s ease, box-shadow .18s ease;
+          " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 26px rgba(17,87,164,.24)'" 
+             onmouseout="this.style.transform=''; this.style.boxShadow='0 8px 20px rgba(17,87,164,.18)'">
+            Send your CV
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Google map -->
+      <div>
+        <div style="
+          background:#eef2f7; border-radius:18px; overflow:hidden; 
+          box-shadow:0 10px 24px rgba(2,8,23,.06);
+          min-height:280px;
+        ">
+          <!-- استخدمي iframe الجاهز لو عندك؛ ده مثال بسيط -->
+         <!-- Map : Tetra pharma Ltd. -->
+<section style="padding:0; margin:0;">
+  <div style="
+      max-width:1200px;margin:0 auto;padding:0 16px;
+    ">
+    <div style="
+      position:relative; overflow:hidden;
+      border-radius:16px; box-shadow:0 12px 28px rgba(0,0,0,.08);
+      background:#f4f6f8;
+      height:420px;
+    ">
+      <iframe
+        title="Tetra pharma Ltd. location"
+        src="https://www.google.com/maps?q=Tetra+pharma+Ltd.&output=embed"
+        style="border:0; position:absolute; inset:0; width:100%; height:100%;"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- رابط فتح الموقع على جوجل مابس (اختياري) -->
+    <div style="text-align:right; margin-top:10px;">
+      <a href="https://www.google.com/maps?q=Tetra+pharma+Ltd."
+         target="_blank"
+         style="font:600 14px/1.2 ui-sans-serif,system-ui; text-decoration:none;
+                padding:10px 14px; border-radius:10px;
+                background:#1157a4; color:#fff; display:inline-block;">
+       Open in Google map
+      </a>
+    </div>
+  </div>
+</section>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- bottom bar -->
+  <div style="
+    border-top:1px solid #e5e7eb; 
+    background:#ffffff; 
+    ">
+    <div style="max-width:1200px; margin:0 auto; padding:16px 18px; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">
+      <span style="color:#64748b;">© <span id="y_foot">2025</span> Tetra Pharma — All Rights Reserved</span>
+      <div style="height:6px; width:120px; border-radius:999px; background:linear-gradient(90deg,#d61d49,#1157a4); opacity:.9;"></div>
+    </div>
+  </div>
+</footer>
+<!-- ============ /FOOTER ============ -->
+
+<script>
+    // تفعيل Active للـ FAQ + Expand/Collapse All + فلترة بسيطة بالكلمات
+document.addEventListener('DOMContentLoaded', () => {
+  /* 1) فعّل رابط FAQ في الناف */
+  const navLinks = document.querySelectorAll('#mainNav .links a');
+  navLinks.forEach(a => a.classList.remove('active'));
+  // لو الرابط بيشير للصفحة دي (faq.html) أو هاش #faq على الهوم
+  navLinks.forEach(a => {
+    const href = (a.getAttribute('href') || '').toLowerCase();
+    if (href.endsWith('/faq.html') || href.includes('faq#') || href.endsWith('index.html#faq') || href === '#faq') {
+      a.classList.add('active');
+    }
+  });
+
+  /* 2) Expand / Collapse All */
+  const expandAllBtn = document.getElementById('expandAll');
+  const collapseAllBtn = document.getElementById('collapseAll');
+  const allDetails = () => Array.from(document.querySelectorAll('.faq details'));
+
+  expandAllBtn?.addEventListener('click', () => {
+    allDetails().forEach(d => d.open = true);
+  });
+  collapseAllBtn?.addEventListener('click', () => {
+    allDetails().forEach(d => d.open = false);
+  });
+
+  /* 3) فلترة سريعة بالبحث */
+  const searchInput = document.getElementById('faqSearch');
+  if (searchInput){
+    searchInput.addEventListener('input', e => {
+      const q = e.target.value.trim().toLowerCase();
+      allDetails().forEach(d => {
+        const text = (d.innerText || d.textContent || '').toLowerCase();
+        d.style.display = text.includes(q) ? '' : 'none';
+      });
+    });
+  }
+
+  /* 4) فلاتر تصنيف (chips) */
+  const chips = document.querySelectorAll('.faq-controls .chip[data-tag]');
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      // toggle active
+      chip.classList.toggle('active');
+      const activeTags = Array.from(document.querySelectorAll('.faq-controls .chip.active')).map(c => c.dataset.tag);
+      // لو مفيش فلاتر فعالة رجّع الكل
+      if (activeTags.length === 0) {
+        allDetails().forEach(d => d.style.display = '');
+        return;
+      }
+      allDetails().forEach(d => {
+        const tags = (d.dataset.tags || '').split(',').map(s => s.trim());
+        const show = activeTags.some(t => tags.includes(t));
+        d.style.display = show ? '' : 'none';
+      });
+    });
+  });
+});
+
+</script>
+</body>
+</html>
