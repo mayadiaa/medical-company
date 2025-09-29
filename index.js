@@ -111,3 +111,23 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       });
     })();
+//  about script 
+    document.addEventListener('DOMContentLoaded', () => {
+      const current = (location.pathname || '').toLowerCase();
+      document.querySelectorAll('.nav a[href]').forEach(a => {
+        const href = a.getAttribute('href').toLowerCase();
+        if (current.endsWith(href) || (href.includes('about') && current.includes('about'))) {
+          a.classList.add('active');
+        }
+      });
+    });
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.ac-card .ac-toggle').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        const card = btn.closest('.ac-card');
+        const open = card.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.textContent = open ? 'See less' : 'See more';
+      });
+    });
+  });

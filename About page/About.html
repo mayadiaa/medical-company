@@ -60,15 +60,7 @@
       </div>
 
       <div class="hero-card">
-        <img src="../images/new logo icon gray.png" alt="logo watermark" style="
-    opacity: 0.19; 
-    filter: grayscale(100%) contrast(.8) brightness(1.1); 
-    mix-blend-mode: multiply; 
-    pointer-events: none; 
-    transform: rotate(-10deg); 
-    width: 120px;   
-    height: auto;  
-  " />
+        <img class="hero-cardImg" src="../images/new logo icon gray.png" alt="logo watermark"/>
 
         <div class="quote">
           “Since its inception, Tetra Pharma has been committed to making a real difference
@@ -329,58 +321,49 @@
   </section>
 
  <!-- =============== FOOTER =============== -->
-<footer style="background:#f8fafc; position:relative; margin-top:60px;">
-  <div style="max-width:1200px; margin:0 auto; padding:50px 18px;">
-    <div style="
-      display:grid; gap:28px;
-      grid-template-columns: 1.1fr 1fr;
-    ">
+<footer class="footerClass">
+  <div class="footercard">
+    <div class="footer">
 
       <!-- LEFT: brand + contact + socials + career -->
       <div>
         <!-- Logo + name -->
-        <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
-          <img src="../images/new logo.png" alt="Tetra Pharma" style="height:38px; width:auto;">
-          <h3 style="margin:0; font-size:24px; color:#d61d49;">Tetra Pharma</h3>
+        <div class="logoContent">
+          <img class="LogoImg" src="../images/new logo.png" alt="Tetra Pharma">
+          <h3 class="LogoH3">Tetra Pharma</h3>
         </div>
 
         <!-- Contact blocks -->
-        <ul style="list-style:none; padding:0; margin:0 0 18px 0; color:#334155;">
-          <li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
-            <span style="color:#1157a4;">📍</span>
+        <ul class="ContactDiv">
+          <li class="ContactLi">
+            <span class="color_blue">📍</span>
             <span>13 Hessein shafik el masry street , Cairo, Egypt</span>
           </li>
           <li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
-            <span style="color:#1157a4;">📞</span>
+            <span class="color_blue">📞</span>
             <a href="tel:+20123456789" style="color:#334155; text-decoration:none;">+20 10 60802711</a>
           </li>
           <li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
-            <span style="color:#1157a4;">✉️</span>
-            <a href="mailto:info@tetrapharma.com" style="color:#334155; text-decoration:none;">info@tetrapharma-eg.com</a>
+            <span class="color_blue">✉️</span>
+            <a href="mailto:info@tetrapharma.com" class="Email">info@tetrapharma-eg.com</a>
           </li>
         </ul>
 
         <!-- Social -->
-        <div style="margin:16px 0 24px 0;">
-          <div style="font-weight:700; color:#0f172a; margin-bottom:10px;">Social</div>
-          <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <a href="https://www.facebook.com/tetrapharmaltd/" style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">Facebook</a>
-            <a href="https://www.instagram.com/tetra_pharma/" style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">Instagram</a>
-            <a href="#" style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">TikTok</a>
-            <a href="#" style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">LinkedIn</a>
+        <div class="social">
+          <div class="socialDiv">Social</div>
+          <div class="socials">
+            <a class="Social1" href="https://www.facebook.com/tetrapharmaltd/">Facebook</a>
+            <a  class="Social2" href="https://www.instagram.com/tetra_pharma/" >Instagram</a>
+            <a  class="Social3" href="#">TikTok</a>
+            <a  class="Social4" href="#" >LinkedIn</a>
           </div>
         </div>
 
         <!-- Career CTA -->
-        <div style="margin-top:10px;">
-          <div style="font-weight:800; color:#0f172a; font-size:20px; margin-bottom:10px;">Build your Career</div>
-          <a href="../career page/career.html" style="
-            display:inline-block; text-decoration:none; 
-            background:linear-gradient(135deg,#1157a4,#0d4a8c);
-            color:#fff; font-weight:700; padding:12px 18px; border-radius:14px;
-            box-shadow:0 8px 20px rgba(17,87,164,.18);
-            transition: transform .18s ease, box-shadow .18s ease;
-          " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 26px rgba(17,87,164,.24)'" 
+        <div class="career">
+          <div class="career1">Build your Career</div>
+          <a class="career2" href="../career page/career.html" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 26px rgba(17,87,164,.24)'" 
              onmouseout="this.style.transform=''; this.style.boxShadow='0 8px 20px rgba(17,87,164,.18)'">
             Send your CV
           </a>
@@ -389,27 +372,15 @@
 
       <!-- RIGHT: Google map -->
       <div>
-        <div style="
-          background:#eef2f7; border-radius:18px; overflow:hidden; 
-          box-shadow:0 10px 24px rgba(2,8,23,.06);
-          min-height:280px;
-        ">
+        <div class="map">
           <!-- استخدمي iframe الجاهز لو عندك؛ ده مثال بسيط -->
          <!-- Map : Tetra pharma Ltd. -->
-<section style="padding:0; margin:0;">
-  <div style="
-      max-width:1200px;margin:0 auto;padding:0 16px;
-    ">
-    <div style="
-      position:relative; overflow:hidden;
-      border-radius:16px; box-shadow:0 12px 28px rgba(0,0,0,.08);
-      background:#f4f6f8;
-      height:420px;
-    ">
-      <iframe
+<section class="map1">
+  <div class="map2">
+    <div class="map3">
+      <iframe class="Iframe"
         title="Tetra pharma Ltd. location"
         src="https://www.google.com/maps?q=Tetra+pharma+Ltd.&output=embed"
-        style="border:0; position:absolute; inset:0; width:100%; height:100%;"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
         allowfullscreen>
@@ -417,12 +388,9 @@
     </div>
 
     <!-- رابط فتح الموقع على جوجل مابس (اختياري) -->
-    <div style="text-align:right; margin-top:10px;">
-      <a href="https://www.google.com/maps?q=Tetra+pharma+Ltd."
-         target="_blank"
-         style="font:600 14px/1.2 ui-sans-serif,system-ui; text-decoration:none;
-                padding:10px 14px; border-radius:10px;
-                background:#1157a4; color:#fff; display:inline-block;">
+    <div class="google">
+      <a class="google_Link" href="https://www.google.com/maps?q=Tetra+pharma+Ltd."
+         target="_blank">
        Open in Google map
       </a>
     </div>
@@ -435,13 +403,10 @@
   </div>
 
   <!-- bottom bar -->
-  <div style="
-    border-top:1px solid #e5e7eb; 
-    background:#ffffff; 
-    ">
-    <div style="max-width:1200px; margin:0 auto; padding:16px 18px; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">
-      <span style="color:#64748b;">© <span id="y_foot">2025</span> Tetra Pharma — All Rights Reserved</span>
-      <div style="height:6px; width:120px; border-radius:999px; background:linear-gradient(90deg,#d61d49,#1157a4); opacity:.9;"></div>
+  <div class="bottomBar">
+    <div class="bottom1">
+      <span class="footerBottom">© <span id="y_foot">2025</span> Tetra Pharma — All Rights Reserved</span>
+      <div class="Footerbtm"></div>
     </div>
   </div>
 </footer>
@@ -450,29 +415,7 @@
 
 
   <!-- Make active link automatic (optional) -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const current = (location.pathname || '').toLowerCase();
-      document.querySelectorAll('.nav a[href]').forEach(a => {
-        const href = a.getAttribute('href').toLowerCase();
-        if (current.endsWith(href) || (href.includes('about') && current.includes('about'))) {
-          a.classList.add('active');
-        }
-      });
-    });
-  </script>
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.ac-card .ac-toggle').forEach(function(btn){
-      btn.addEventListener('click', function(){
-        const card = btn.closest('.ac-card');
-        const open = card.classList.toggle('is-open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        btn.textContent = open ? 'See less' : 'See more';
-      });
-    });
-  });
-</script>
+  <script src="../index.js"></script>
 
 </body>
 
