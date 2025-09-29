@@ -132,3 +132,23 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
  document.getElementById('y_foot').textContent = new Date().getFullYear();
+// 
+(function () {
+						const items = document.querySelectorAll('#our-products .reveal');
+						if (!('IntersectionObserver' in window)) { return; }
+
+						const io = new IntersectionObserver((entries) => {
+							entries.forEach(e => {
+								if (e.isIntersecting) {
+									e.target.style.animationPlayState = 'running';
+									io.unobserve(e.target);
+								}
+							});
+						}, { threshold: 0.15 });
+
+						items.forEach(el => {
+							// نوقف الأنيميشن لحد ما يدخل في الشاشة
+							el.style.animationPlayState = 'paused';
+							io.observe(el);
+						});
+					})();

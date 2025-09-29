@@ -201,10 +201,10 @@
 
 <body
 	class="home wp-singular page-template page-template-aheto_canvas page page-id-7 wp-embed-responsive wp-theme-snapster wp-child-theme-snapster-child-theme theme-snapster woocommerce-no-js no-sidebar elementor-default elementor-kit-7972 elementor-page elementor-page-7">
-	<h5 class="aheto-pricing-tables__pricelist-total" style="display: none;">Total: <span
+	<!-- <h5 class="aheto-pricing-tables__pricelist-total" >Total: <span
 			class="aheto-pricing-tables__currency"></span>
 		<span class="aheto-pricing-tables__price"></span>
-	</h5>
+	</h5> -->
 	<div class="aheto-preloader">
 		<div class="aheto-preloader__spinner">
 			<div></div>
@@ -238,21 +238,18 @@
 </nav>
 
 		<!-- HERO VIDEO -->
-	<div style="position:relative;height:100vh;overflow:hidden;">
-  <video autoplay muted loop playsinline 
-         style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+	<div class="heroVideo">
+  <video class="video" autoplay muted loop playsinline>
     <source src="./images/video1 (1).mp4" type="video/mp4" />
   </video>
 
   <!-- فلتر أسود -->
-  <div style="position:absolute;top:0;left:0;width:100%;height:100%;
-              background:rgba(0, 0, 0, 0.562);pointer-events:none;"></div>
+  <div class="filter"></div>
 
   <!-- نص فوق الفيديو (اختياري) -->
-  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-              color:#fff;text-align:center;z-index:1;">
-    <h1 style="font-size:40px;margin:0; color: white;">Your Health, Our Mission</h1>
-    <p style="font-size:18px;margin:10px 0 0; color: white;">Tetra Pharma</p>
+  <div class="videocontent">
+    <h1 class="headerh1">Your Health, Our Mission</h1>
+    <p class="headerP">Tetra Pharma</p>
 	<a href="./ProductPage/product.html"><button class="btn">Explore Our Products</button></a>
   </div>
 </div>
@@ -403,7 +400,7 @@
 														class="aheto-heading aheto-heading--main  align-tablet-default align-mob-default aheto_heading_68caa797bf65c ">
 
 
-														<p class="about_p" style="font-size: larger !important;">Since its inception,
+														<p class="about_p">Since its inception,
 															Tetra Pharma has been committed to making a real difference
 															in people’s lives through innovative pharmaceutical and
 															nutritional products. We were among the first to introduce
@@ -607,92 +604,53 @@
 			</section>
 			<!-- ============ OUR PRODUCTS (separate title bar + animations) ============ -->
 			<section
-				class="elementor-section elementor-inner-section elementor-element elementor-element-7ad338a elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+				class="OurProducts elementor-section elementor-inner-section elementor-element elementor-element-7ad338a elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
 				data-id="7ad338a" data-element_type="section"
 				data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;animation_delay&quot;:500}"
-				id="our-products" style="padding:80px 20px;background:#fff;">
-				<div style="max-width:1200px;margin:0 auto;">
+				id="our-products">
+				<div class="ourpro">
 
-					<div style="text-align:center;margin-bottom:36px;">
-						<h2 style="color:#1157a4;font-size:32px;font-weight:700;margin:0;">Our Products</h2>
-						<p style="color:#666;margin-top:8px;">Trusted supplements for a healthier life.</p>
+					<div class="productsContent">
+						<h2 class="productsContenth2">Our Products</h2>
+						<p class="productP">Trusted supplements for a healthier life.</p>
 					</div>
 
 
-					<div class="prod-grid" style="
-      display:grid;gap:28px;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); ">
+					<div class="prod-grid catogory1">
 
-
-						<div class="prod-card reveal" style="
-        border-radius:14px;overflow:hidden;background:#fff;
-        box-shadow:0 10px 22px rgba(0,0,0,.08);
-        transition:transform .35s ease, box-shadow .35s ease;
-      ">
-							<div class="img-wrap" style="
-          height:360px;overflow:hidden;background:#f6f7f9;
-        ">
+						<div class="prod-card reveal CAT2">
+							<div class="img-wrap catoImg">
 								<a href="ProductPage" target="_blank">
-									<img src="./images/1.jpg" alt="Selenium ACE" style="
-            width:100%;height:100%;object-fit:cover;display:block;
-            transform:scale(1);transition:transform .6s ease;
-          ">
+									<img class="prodImg" src="./images/1.jpg" alt="Selenium ACE">
 								</a>
 							</div>
-							<div style="
-          background:#1157a4;color:#fff;text-align:center;
-          padding:14px 12px;font-weight:700;font-size:18px;
-        ">
+							<div class="ProdName">
 								Selenium ACE
 							</div>
 						</div>
 
 
-						<div class="prod-card reveal" style="
-        border-radius:14px;overflow:hidden;background:#fff;
-        box-shadow:0 10px 22px rgba(0,0,0,.08);
-        transition:transform .35s ease, box-shadow .35s ease;
-      ">
-							<div class="img-wrap" style="
-          height:360px;overflow:hidden;background:#f6f7f9;
-        ">
+						<div class="prod-card reveal CAT2">
+							<div class="img-wrap catoImg">
 								<a href="./ProductPage/product.html" target="_blank">
-									<img src="./images/1I4A2161.jpg" alt="Efalex" style="
-            width:100%;height:100%;object-fit:cover;display:block;
-            transform:scale(1);transition:transform .6s ease;
-          ">
+									<img class="prodImg" src="./images/1I4A2161.jpg" alt="Efalex">
 								</a>
 							</div>
 							<a href="./ProductPage/product.html">
-								<div style="
-          background:#1157a4;color:#fff;text-align:center;
-          padding:14px 12px;font-weight:700;font-size:18px;
-        ">
+								<div class="ProdName">
 									Efalex
 								</div>
 							</a>
 						</div>
 
 						<!-- كارت 3 -->
-						<div class="prod-card reveal" style="
-        border-radius:14px;overflow:hidden;background:#fff;
-        box-shadow:0 10px 22px rgba(0,0,0,.08);
-        transition:transform .35s ease, box-shadow .35s ease;
-      ">
-							<div class="img-wrap" style="
-          height:360px;overflow:hidden;background:#f0f1f3;
-        ">
+						<div class="prod-card reveal CAT2">
+							<div class="img-wrap catoImg">
 								<a href="./ProductPage/product.html">
-									<img src="./images/3.png" alt="Coming Soon" style="
-            width:100%;height:100%;object-fit:cover;display:block;
-            transform:scale(1);transition:transform .6s ease;
-          ">
+									<img class="prodImg" src="./images/3.png" alt="Coming Soon">
 								</a>
 							</div>
-							<div style="
-          background:#1157a4;color:#fff;text-align:center;
-          padding:14px 12px;font-weight:700;font-size:18px;
-        ">
+							<div class="ProdName">
 								Coming Soon
 							</div>
 						</div>
@@ -700,294 +658,9 @@
 					</div>
 				</div>
 
-				<!-- أنماط الأنيميشن والـ hover (inline) -->
-				<style>
-					/* hover تأثير */
-					.prod-card:hover {
-						transform: translateY(-6px);
-						box-shadow: 0 16px 32px rgba(0, 0, 0, .12);
-					}
-
-					.prod-card:hover .img-wrap img {
-						transform: scale(1.06);
-					}
-
-					/* أنيميشن الظهور */
-					.reveal {
-						opacity: 0;
-						transform: translateY(26px);
-						animation: prodFadeUp .75s ease forwards;
-					}
-
-					/* هنأخر كل كارت شوية صغيرة */
-					.reveal:nth-child(1) {
-						animation-delay: .05s;
-					}
-
-					.reveal:nth-child(2) {
-						animation-delay: .15s;
-					}
-
-					.reveal:nth-child(3) {
-						animation-delay: .25s;
-					}
-
-					@keyframes prodFadeUp {
-						to {
-							opacity: 1;
-							transform: translateY(0);
-						}
-					}
-
-					/* موبايل: قلل الارتفاع شوية */
-					@media (max-width: 480px) {
-						.img-wrap {
-							height: 300px !important;
-						}
-					}
-				</style>
-
-				<!-- ملاحِظ سكروول بسيط (لو حبيتي تفعّليه بدل التشغيل الفوري) -->
-				<script>
-					// يخلي الأنيميشن يبدأ لما الكارت يدخل في الشاشة
-					(function () {
-						const items = document.querySelectorAll('#our-products .reveal');
-						if (!('IntersectionObserver' in window)) { return; }
-
-						const io = new IntersectionObserver((entries) => {
-							entries.forEach(e => {
-								if (e.isIntersecting) {
-									e.target.style.animationPlayState = 'running';
-									io.unobserve(e.target);
-								}
-							});
-						}, { threshold: 0.15 });
-
-						items.forEach(el => {
-							// نوقف الأنيميشن لحد ما يدخل في الشاشة
-							el.style.animationPlayState = 'paused';
-							io.observe(el);
-						});
-					})();
-				</script>
 			</section>
 			<!-- ======================= /OUR PRODUCTS ======================= -->
 
-
-
-
-
-
-
-			<!-- ----------------------------------------------------------------------- -->
-			<!-- ========== NEW DESIGN v2: Why Choose Tetra Pharma (Diagonal Card) ========== -->
-			<section style="margin-top: 0 !important;"
-				class=" chooseDiv elementor-section elementor-top-section elementor-element elementor-element-f373498 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-				data-id="f373498" data-element_type="section" data-settings='{"stretch_section":"section-stretched"}'>
-
-				<!-- Inline CSS للتصميم الجديد المختلف -->
-				<style>
-					.choose_pharma_div {
-						position: relative;
-						overflow: hidden;
-						border-radius: 26px;
-						padding: 0;
-						/* هنستخدم كارت داخلي */
-						background: #f6f9ff;
-						border: 1px solid rgba(17, 87, 164, .08);
-					}
-
-					/* كارت مائل مع تقسيم قطري */
-					.pharma_div {
-						position: relative;
-						margin: 0 auto;
-						max-width: 1200px;
-						padding: 0;
-					}
-
-					.why-split {
-						position: relative;
-						display: grid;
-						grid-template-columns: 1.1fr 0.9fr;
-						min-height: 320px;
-						isolation: isolate;
-						border-radius: 24px;
-						overflow: hidden;
-						box-shadow: 0 16px 46px rgba(17, 87, 164, .12);
-						background:
-							linear-gradient(160deg, #ffffff 0%, #f0f4fb 100%);
-						border: 1px solid rgba(17, 87, 164, .10);
-					}
-
-					/* نصف الخلفية اليمين: صورة/لوغو شفاف + طبقة تدرج */
-					.why-split .bg {
-						position: relative;
-						overflow: hidden;
-						background:
-							linear-gradient(to bottom right, rgba(17, 87, 164, .10), rgba(17, 87, 164, .05)),
-							radial-gradient(700px 280px at 80% 10%, rgba(212, 25, 67, .08), transparent 60%),
-							#eef3fa;
-					}
-
-					.why-split .bg:before {
-						content: "";
-						position: absolute;
-						inset: 0;
-						background: url("./images/new logo icon gray.png") center/60% no-repeat;
-						opacity: .09;
-						filter: grayscale(100%) contrast(.9) brightness(1.05);
-						mix-blend-mode: multiply;
-						transform: rotate(-4deg);
-						pointer-events: none;
-					}
-
-					.why-split .bg:after {
-						content: "";
-						position: absolute;
-						inset: auto -8% 0 -8%;
-						height: 6px;
-						background: linear-gradient(90deg, #1157a4, #d41943);
-						opacity: .55;
-					}
-
-					/* نصف المحتوى اليسار */
-					.why-split .content {
-						display: flex;
-						flex-direction: column;
-						justify-content: center;
-						padding: 42px 44px;
-						position: relative;
-					}
-
-					.why-split .content:before {
-						/* قَطْع مائل يفصل بين الجانبين */
-						content: "";
-						position: absolute;
-						right: -60px;
-						top: 0;
-						bottom: 0;
-						width: 120px;
-						background: linear-gradient(to right, transparent 0%, rgba(17, 87, 164, .10) 55%, rgba(17, 87, 164, .16) 100%);
-						transform: skewX(-18deg);
-						filter: blur(.4px);
-						opacity: .65;
-						pointer-events: none;
-						z-index: 0;
-					}
-
-					.aheto-heading__title {
-						margin: 0 0 10px;
-						font-size: clamp(26px, 2.7vw, 38px);
-						line-height: 1.22;
-						color: #1f2f49;
-						font-weight: 800;
-						position: relative;
-						z-index: 1;
-						letter-spacing: .2px;
-					}
-
-					.aheto-heading__title span {
-						color: #d41943;
-						font-style: italic;
-					}
-
-					.subnote {
-						margin: 0 0 14px;
-						color: #4a5d78;
-						font-size: clamp(14px, 1.1vw, 16px);
-						line-height: 1.7;
-						max-width: 60ch;
-						position: relative;
-						z-index: 1;
-					}
-
-					/* نقاط مميزة */
-					.why-grid {
-						display: grid;
-						grid-template-columns: repeat(2, minmax(0, 1fr));
-						gap: 12px 16px;
-						margin: 8px 0 18px;
-						position: relative;
-						z-index: 1;
-					}
-
-					.why-item {
-						display: flex;
-						align-items: flex-start;
-						gap: 10px;
-						color: #29466b;
-						font-size: 15px;
-						line-height: 1.6;
-						background: #fff;
-						border: 1px solid rgba(17, 87, 164, .12);
-						padding: 10px 12px;
-						border-radius: 12px;
-						box-shadow: 0 10px 22px rgba(17, 87, 164, .08);
-					}
-
-					.why-item .dot {
-						margin-top: 6px;
-						min-width: 9px;
-						width: 9px;
-						height: 9px;
-						border-radius: 50%;
-						background: conic-gradient(#1157a4, #5f90cf);
-						box-shadow: 0 0 0 4px rgba(17, 87, 164, .09);
-					}
-
-					.cta-row {
-						display: flex;
-						align-items: center;
-						gap: 14px;
-						position: relative;
-						z-index: 1;
-					}
-
-					.cs-btn.snapster_layout1 {
-						display: inline-flex;
-						align-items: center;
-						gap: 10px;
-						padding: 12px 22px;
-						border-radius: 999px;
-						border: 1px solid #1157a4;
-						background: #1157a4;
-						color: #fff !important;
-						text-decoration: none !important;
-						letter-spacing: .2px;
-						font-weight: 600;
-						box-shadow: 0 10px 26px rgba(17, 87, 164, .20);
-						transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
-					}
-
-					.cs-btn.snapster_layout1:hover {
-						transform: translateY(-2px);
-						background: #0f4e95;
-						box-shadow: 0 16px 34px rgba(17, 87, 164, .28);
-					}
-
-					.hint {
-						color: #486088;
-						font-size: 14px;
-						opacity: .9;
-					}
-
-					/* استجابة */
-					@media (max-width:1024px) {
-						.why-split {
-							grid-template-columns: 1fr;
-							min-height: unset;
-						}
-
-						.why-split .bg {
-							height: 160px;
-						}
-
-						.why-split .content:before {
-							display: none;
-						}
-					}
-				</style>
-				<!-- career  -->
 				<!-- ================= CAREER INTRO SECTION ================= -->
 				<section class="career-intro">
 					<div class="career-content">
@@ -1000,67 +673,10 @@
 					</div>
 				</section>
 
-				<style>
-					.career-intro {
-						width: 100%;
-						padding: 100px 20px;
-						background: linear-gradient(135deg, #f9fbff, #eef3fb);
-						text-align: center;
-					}
-
-					.career-content {
-						max-width: 900px;
-						margin: 0 auto;
-					}
-
-					.career-content h2 {
-						font-size: 36px;
-						font-weight: 800;
-						color: #16365b;
-						margin-bottom: 16px;
-					}
-
-					.career-content h2 span {
-						color: #d6103d;
-					}
-
-					.career-content p {
-						font-size: 18px;
-						color: #444;
-						margin-bottom: 30px;
-						line-height: 1.6;
-					}
-
-					.btn-career {
-						display: inline-block;
-						background: #1157a4;
-						color: #fff;
-						padding: 14px 34px;
-						border-radius: 40px;
-						text-decoration: none;
-						font-size: 16px;
-						font-weight: 600;
-						transition: all 0.3s ease;
-					}
-
-					.btn-career:hover {
-						background: #fff !important;
-						color: #0556a4 !important;
-						border: 1px solid #0556a4 !important;
-						transition: ease all 600ms;
-					}
-
-					.career-intro::before,
-					.career-intro::after {
-						content: none !important;
-						display: none !important;
-					}
-				</style>
-
 				<!-- ========== /NEW DESIGN v2 ========== -->
 
-				<section style="margin-top: 3rem !important;"
-					class="elementor-section elementor-top-section elementor-element elementor-element-3c95ba7 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				<section 
+					class=" blog elementor-section elementor-top-section elementor-element elementor-element-3c95ba7 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 					data-id="3c95ba7" data-element_type="section"
 					data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
 					<div class="elementor-container elementor-column-gap-no">
@@ -1079,9 +695,7 @@
 													data-id="0bf84f1" data-element_type="widget"
 													data-widget_type="image.default">
 													<div class="elementor-widget-container">
-														<img src="./images/new logo icon gray.png" alt="logo watermark"
-															style="opacity: 0.19; filter: grayscale(100%) contrast(.8) brightness(1.1); mix-blend-mode: multiply; pointer-events: none; transform: rotate(-10deg);  width: 120px;   height: auto;   " />
-
+														<img class="watermarkImg" src="./images/new logo icon gray.png" alt="logo watermark"												/>
 													</div>
 												</div>
 											</div>
@@ -1105,7 +719,7 @@
 															class="aheto-heading aheto-heading--main  align-tablet-default align-mob-default aheto_heading_68caa797c81ad ">
 
 
-															<p style=" color: #d41943" class="aheto-heading__title ">Our
+															<p class="blogP aheto-heading__title ">Our
 																Blogs</p>
 														</div>
 													</div>
@@ -1131,7 +745,7 @@
 															class="aheto-heading aheto-heading--main t-center align-tablet-default align-mob-default aheto_heading_68caa797c916b ">
 
 
-															<h2 style=" color: #0556a4" class="aheto-heading__title ">
+															<h2 class="blogH2 aheto-heading__title ">
 																Take a
 																Look at our blogs
 															</h2>
@@ -1147,8 +761,8 @@
 					</div>
 				</section>
 				<!-- ============ BLOG / ARTICLES CARDS (3 columns) ============ -->
-				<section id="blog-feature" style="padding:80px 20px;background:#fff;">
-					<div style="max-width:1200px;margin:0 auto;">
+				<section class="blogarticles" id="blog-feature" >
+					<div class="blog1">
 
 
 						<!-- الشبكة -->
@@ -1159,7 +773,7 @@
 									<img src="./images/b2.jfif" alt="The Future of Generic Medicines">
 								</figure>
 								<div class="bf-body">
-									<h3 class="bf-title" style="color: #0556a4;">The Future of Generic Medicines</h3>
+									<h3 class="bf-title H3blog" >The Future of Generic Medicines</h3>
 									<p class="bf-text">
 										The Future of Generic Medicines
 										Generics make high-quality treatment accessible to millions. How do we
@@ -1176,7 +790,7 @@
 									<img src="./images/b3.png" alt="Innovation That Truly Matters">
 								</figure>
 								<div class="bf-body">
-									<h3 class="bf-title" style="color: #0556a4;">Innovation That Truly Matters</h3>
+									<h3 class="bf-title H3blog" >Innovation That Truly Matters</h3>
 									<p class="bf-text">
 										Where science meets real patient needs. A look at the R&amp;D ethos behind
 										products that improve outcomes— Stay tuned for our next release new formulations
@@ -1193,7 +807,7 @@
 									<img src="./images/b4.jpg" alt="Coming Soon">
 								</figure>
 								<div class="bf-body">
-									<h3 class="bf-title" style="color: #0556a4;">Coming Soon</h3>
+									<h3 class="bf-title H3blog">Coming Soon</h3>
 									<p class="bf-text">
 										Stay tuned for our next release—new formulations designed for better
 										adherence and real-world effectiveness that improve outcomes, meets real patient
@@ -1206,231 +820,100 @@
 						</div>
 					</div>
 
-					<!-- Scoped CSS -->
-					<style>
-						/* شبكة مرتبة بثلاثة أعمدة وتستجيب للموبايل */
-						#blog-feature .bf-grid {
-							display: grid;
-							gap: 28px;
-							grid-template-columns: repeat(3, 1fr);
-						}
-
-						@media (max-width:1024px) {
-							#blog-feature .bf-grid {
-								grid-template-columns: repeat(2, 1fr);
-							}
-						}
-
-						@media (max-width:640px) {
-							#blog-feature .bf-grid {
-								grid-template-columns: 1fr;
-							}
-						}
-
-						/* الكارت */
-						#blog-feature .bf-card {
-							background: #fff;
-							border-radius: 16px;
-							overflow: hidden;
-							box-shadow: 0 10px 22px rgba(0, 0, 0, .08);
-							display: flex;
-							flex-direction: column;
-							transition: transform .3s ease, box-shadow .3s ease;
-						}
-
-						#blog-feature .bf-card:hover {
-							transform: translateY(-6px);
-							box-shadow: 0 18px 36px rgba(0, 0, 0, .14);
-						}
-
-						/* الصورة */
-						#blog-feature .bf-media {
-							margin: 0;
-							height: 240px;
-							overflow: hidden;
-							background: #f6f7f9;
-						}
-
-						#blog-feature .bf-media img {
-							width: 100%;
-							height: 100%;
-							object-fit: cover;
-							display: block;
-							transform: scale(1);
-							transition: transform .6s ease;
-						}
-
-						#blog-feature .bf-card:hover .bf-media img {
-							transform: scale(1.05);
-						}
-
-						/* المحتوى */
-						#blog-feature .bf-body {
-							padding: 20px 20px 22px;
-							display: flex;
-							flex-direction: column;
-							gap: 12px;
-						}
-
-						#blog-feature .bf-title {
-							margin: 0;
-							font-size: 20px;
-							line-height: 1.35;
-							font-weight: 700;
-							color: #0f172a;
-						}
-
-						#blog-feature .bf-text {
-							margin: 0;
-							color: #475467;
-							line-height: 1.6;
-							font-size: 15px;
-							flex: 1;
-							/* يخلي الزر يلتصق أسفل الكارت */
-						}
-
-						/* الزر بتدرّج ألوان البراند */
-						#blog-feature .bf-btn {
-							align-self: flex-start;
-							background: linear-gradient(135deg, #d6103d, #0556a4);
-							color: #fff;
-							text-decoration: none;
-							font-weight: 700;
-							padding: 10px 16px;
-							border-radius: 999px;
-							font-size: 14px;
-							box-shadow: 0 6px 14px rgba(5, 86, 164, .28);
-							transition: filter .2s ease, transform .2s ease;
-						}
-
-						#blog-feature .bf-btn:hover {
-							filter: brightness(1.05);
-							transform: translateY(-1px);
-						}
-
-						#blog-feature .bf-btn:active {
-							transform: translateY(0);
-						}
-					</style>
 				</section>
 				<!-- ============ /BLOG / ARTICLES CARDS ============ -->
 				<!-- partner  -->
-				<section style="padding:50px 0; background:#fff; text-align:center; overflow:hidden;">
-					<h3 style="font-size:28px; margin-bottom:30px;   color: #2e6daf !important;">Our Partners</h3>
+				<section class="OurPartner">
+					<h3 class="PartnerH3">Our Partners</h3>
 
-					<div style="overflow:hidden; position:relative; height:120px;">
-						<div style="display:flex; width:calc(250px * 10); animation:scroll 25s linear infinite;">
+					<div class="parner">
+						<div class="partnercompanies">
 
-							<div
-								style="height:120px; width:250px; display:flex; align-items:center; justify-content:center;">
-								<img src="./images/download.jpg" alt="Client 1"
-									style="max-height:100px; max-width:200px; object-fit:contain; ">
+							<div class="ImgDiv">
+								<img class="PartnerImg" src="./images/download.jpg" alt="Client 1">
 							</div>
 
 							<div
-								style="height:120px; width:250px; display:flex; align-items:center; justify-content:center;">
+								class="ImgDiv">
 								<img src="./images/download.png" alt="Client 2"
-									style="max-height:100px; max-width:200px; object-fit:contain; ">
+									class="PartnerImg">
 							</div>
 
 							<div
-								style="height:120px; width:250px; display:flex; align-items:center; justify-content:center;">
+								class="ImgDiv">
 								<img src="./images/images (1).png" alt="Client 3"
-									style="max-height:100px; max-width:200px; object-fit:contain; ">
+									class="PartnerImg">
 							</div>
 
 							<div
-								style="height:120px; width:250px; display:flex; align-items:center; justify-content:center;">
+								class="ImgDiv">
 								<img src="./images/images (2).png" alt="Client 4"
-									style="max-height:100px; max-width:200px; object-fit:contain; ">
+									class="PartnerImg">
 							</div>
 
 							<div
-								style="height:120px; width:250px; display:flex; align-items:center; justify-content:center;">
+								class="ImgDiv">
 								<img src="./images/images.png" alt="Client 5"
-									style="max-height:100px; max-width:200px; object-fit:contain; ">
+								class="PartnerImg">
 							</div>
 
 							<!-- repeat -->
 							<div
-								style="height:120px; width:250px; display:flex; align-items:center; justify-content:center;">
+								class="ImgDiv">
 								<img src="./images/download.jpg" alt="Client 1"
-									style="max-height:100px; max-width:200px; object-fit:contain; ">
+									class="PartnerImg">
 							</div>
 
 							<div
-								style="height:120px; width:250px; display:flex; align-items:center; justify-content:center;">
+								class="ImgDiv">
 								<img src="./images/download.png" alt="Client 2"
-									style="max-height:100px; max-width:200px; object-fit:contain; ">
+									class="PartnerImg">
 							</div>
 
 							<div
-								style="height:120px; width:250px; display:flex; align-items:center; justify-content:center;">
+								class="ImgDiv">
 								<img src="./images/images (1).png" alt="Client 3"
-									style="max-height:100px; max-width:200px; object-fit:contain; ">
+									class="PartnerImg">
 							</div>
 
 							<div
-								style="height:120px; width:250px; display:flex; align-items:center; justify-content:center;">
+									class="ImgDiv">
 								<img src="./images/images (2).png" alt="Client 4"
-									style="max-height:100px; max-width:200px; object-fit:contain; ">
+									class="PartnerImg">
 							</div>
 
 							<div
-								style="height:120px; width:250px; display:flex; align-items:center; justify-content:center;">
+								class="ImgDiv">
 								<img src="./images/images.png" alt="Client 5"
-									style="max-height:100px; max-width:200px; object-fit:contain;">
+									class="PartnerImg">
 							</div>
-
-
 						</div>
-
-						<style>
-							@keyframes scroll {
-								0% {
-									transform: translateX(0);
-								}
-
-								100% {
-									transform: translateX(-50%);
-								}
-							}
-						</style>
 				</section>
 
 				<!-- news -->
 				<!-- ========== LATEST NEWS (Preview) ========== -->
-				<section id="latest-news" style="padding:80px 20px;background:#fff;">
-					<div style="max-width:1200px;margin:0 auto;">
+				<section class="latestnews" id="latest-news">
+					<div class="news">
 
 						<!-- عنوان -->
-						<div style="text-align:center;margin-bottom:42px;">
-							<h2 style="font-size:32px;font-weight:700;color:#1157a4;margin:0;">Latest News</h2>
-							<div
-								style="width:90px;height:3px;background:linear-gradient(90deg,#d6103d,#0556a4);margin:12px auto 0;">
+						<div class="newstitle">
+							<h2 class="newsh2" >Latest News</h2>
+							<div class="DivNews">
 							</div>
 						</div>
 
 						<!-- الشبكة (غيّر repeat(3,1fr) لو عايز اتنين بس على الديسكتوب) -->
-						<div class="news-grid" style="
-      display:grid;gap:28px;
-      grid-template-columns:repeat(3, minmax(260px,1fr));
-    ">
+						<div class="news-grid gridNews">
 
 							<!-- خبر 1 -->
-							<article class="news-card" style="
-        border-radius:14px;overflow:hidden;background:#fafafa;
-        box-shadow:0 8px 20px rgba(0,0,0,.08);
-        transition:transform .25s ease, box-shadow .25s ease;
-      ">
-								<a href="news-post-1.html" style="display:block; text-decoration:none; color:inherit;">
-									<img src="./images/b3.png" alt="Selenium ACE new pack size"
-										style="width:100%;height:220px;object-fit:cover;display:block;">
-									<div style="padding:18px 16px 20px;">
-										<time datetime="2025-09-18"
-											style="font-size:13px;color:#6b7280;">18.9.2025</time>
+							<article class="news-card newcard">
+								<a href="news-post-1.html" class="newA" >
+									<img class="newImg" src="./images/b3.png" alt="Selenium ACE new pack size">
+									<div class="new1">
+										<time class="newtime" datetime="2025-09-18"
+											>18.9.2025</time>
 										<h3
-											style="margin:10px 0 12px;font-size:18px;line-height:1.4;color:#1f2937;font-weight:700;">
+										class="newh3">
 											Tetra Pharma launches Selenium ACE in a convenient new pack size
 										</h3>
 										<a href="./news page/news.html">
@@ -1443,19 +926,15 @@
 							</article>
 
 							<!-- خبر 2 -->
-							<article class="news-card" style="
-        border-radius:14px;overflow:hidden;background:#fafafa;
-        box-shadow:0 8px 20px rgba(0,0,0,.08);
-        transition:transform .25s ease, box-shadow .25s ease;
-      ">
-								<a href="news-post-2.html" style="display:block; text-decoration:none; color:inherit;">
+							<article class="news-card newcard">
+								<a href="news-post-2.html" class="newA">
 									<img src="./images/b2.jfif" alt="Coming soon announcement"
-										style="width:100%;height:220px;object-fit:cover;display:block;">
-									<div style="padding:18px 16px 20px;">
-										<time datetime="2025-09-18"
-											style="font-size:13px;color:#6b7280;">18.9.2025</time>
+										class="newImg newimg2">
+									<div class="new1">
+										<time class="newtime" datetime="2025-09-18"
+											>18.9.2025</time>
 										<h3
-											style="margin:10px 0 12px;font-size:18px;line-height:1.4;color:#1f2937;font-weight:700;">
+											class="newh3">
 											Tetra Pharma announces upcoming product — Coming Soon
 										</h3>
 									<a href="./news page/news.html">
@@ -1468,19 +947,15 @@
 							</article>
 
 							<!-- خبر 3 (اختياري) -->
-							<article class="news-card" style="
-        border-radius:14px;overflow:hidden;background:#fafafa;
-        box-shadow:0 8px 20px rgba(0,0,0,.08);
-        transition:transform .25s ease, box-shadow .25s ease;
-      ">
-								<a href="news-post-3.html" style="display:block; text-decoration:none; color:inherit;">
+							<article class="news-card newcard" >
+								<a href="news-post-3.html" class="newA">
 									<img src="./images/download (1).jfif" alt="GMP quality & supply update"
-										style="width:100%;height:220px;object-fit:cover;display:block;">
-									<div style="padding:18px 16px 20px;">
-										<time datetime="2025-09-10"
-											style="font-size:13px;color:#6b7280;">10.9.2025</time>
+										class="newImg">
+									<div class="new1">
+										<time class="newtime" datetime="2025-09-10"
+											>10.9.2025</time>
 										<h3
-											style="margin:10px 0 12px;font-size:18px;line-height:1.4;color:#1f2937;font-weight:700;">
+											class="newh3">
 											Reliable supply and GMP-grade quality
 										</h3>
 										<a href="./news page/news.html">
@@ -1496,50 +971,16 @@
 
 						<!-- زرار يودّي لصفحة الأخبار الكاملة -->
 						<!-- زرار عرض كل الأخبار -->
-						<div style="text-align:center; margin-top:28px;">
-							<a href="./news page/news.html" style="
-    display:inline-flex;
-    align-items:center;
-    font-size:16px;
-    font-weight:600;
-    color:#1157a4;
-    text-decoration:none;
-    transition:color 0.3s ease;
-  ">
+						<div class="viewall">
+							<a class="viewnews" href="./news page/news.html">
 								View all news
-								<span style="margin-left:8px; font-size:18px;">→</span>
+								<span class="viewnewsspan">→</span>
 							</a>
 						</div>
 
-						<!-- CSS إضافي للتأثير -->
-						<style>
-							#latest-news a:hover {
-								color: #d6103d;
-								/* الأحمر بتاعك */
-							}
-						</style>
-
 					</div>
 
-					<!-- Hover بسيط للكروت + ريسبونسيف -->
-					<style>
-						#latest-news .news-card:hover {
-							transform: translateY(-6px);
-							box-shadow: 0 14px 26px rgba(0, 0, 0, .12);
-						}
-
-						@media (max-width: 992px) {
-							#latest-news .news-grid {
-								grid-template-columns: repeat(2, minmax(240px, 1fr)) !important;
-							}
-						}
-
-						@media (max-width: 600px) {
-							#latest-news .news-grid {
-								grid-template-columns: 1fr !important;
-							}
-						}
-					</style>
+	
 				</section>
 				<!-- ========== /LATEST NEWS (Preview) ========== -->
 
@@ -1568,7 +1009,7 @@
 													data-widget_type="image.default">
 													<div class="elementor-widget-container">
 														<img src="./images/new logo icon gray.png" alt="logo watermark"
-															style="opacity: 0.19; filter: grayscale(100%) contrast(.8) brightness(1.1); mix-blend-mode: multiply; pointer-events: none; transform: rotate(-10deg);  width: 120px;   height: auto;   " />
+														class="watermarkImg" />
 
 													</div>
 												</div>
@@ -1592,7 +1033,7 @@
 															class="aheto-heading aheto-heading--main  align-tablet-default align-mob-default aheto_heading_68caa7981a9aa ">
 
 
-															<p style="color: #d6103d;" class="aheto-heading__title ">
+															<p  class="aheto-heading__title contact_P ">
 																Contact</p>
 														</div>
 													</div>
@@ -1791,18 +1232,8 @@
 									data-settings="{&quot;_position&quot;:&quot;absolute&quot;}"
 									data-widget_type="image.default">
 									<div class="elementor-widget-container">
-										<img loading="lazy" decoding="async" width="352" height="375"
-											src="./images/new logo icon gray.png" alt="logo watermark" style="
-     opacity: 0.19;
-    filter: grayscale(100%) contrast(.8) brightness(1.1);
-    mix-blend-mode: multiply;
-    pointer-events: none;
-    transform: rotate(-10deg);
-    width: 64%;
-    height: auto;
-    margin-left: -13rem;
-
-  " />
+										<img class="contactwatermark" loading="lazy" decoding="async" width="352" height="375"
+											src="./images/new logo icon gray.png" alt="logo watermark"/>
 
 									</div>
 								</div>
@@ -1819,45 +1250,40 @@
 
 	<!-- ------------
  <!-Testimonials Carousel -->
-	<section id="testimonials"
-		style="  background: linear-gradient(135deg, #f9fbff, #eef3fb); padding:60px 0;text-align:center; margin-top: 2rem;">
-		<h2 style="font-size:28px;letter-spacing:.06em;margin:0 0 24px; color: #0556a4;">Testimonials</h2>
+	<section id="testimonials" class="testimonial">
+		<h2 class="testimonialh2">Testimonials</h2>
 
-		<div id="tsl" style="max-width:900px;margin:0 auto;position:relative;">
+		<div id="tsl" class="testimonialslider">
 			<!-- Slides -->
-			<div class="slide" style="display:block;">
-				<blockquote style="font-size:34px;line-height:1.4;margin:0 0 16px;">
+			<div class="slide slider">
+				<blockquote class="slidercontent">
 					“Our partnership with Tetra Pharma raised our quality standards across the board.”
 				</blockquote>
-				<div style="font-weight:600;">Dr. Ahmed El-Sayed</div>
-				<div style="color:#d6103d;">Cardiologist</div>
+				<div class="sliderbyname">Dr. Ahmed El-Sayed</div>
+				<div class="RedColor">Cardiologist</div>
 			</div>
 
-			<div class="slide" style="display:none;">
-				<blockquote style="font-size:34px;line-height:1.4;margin:0 0 16px;">
+			<div class="slide" >
+				<blockquote class="slidercontent">
 					“Efalex made a real difference for my patients’ focus and visual performance.”
 				</blockquote>
-				<div style="font-weight:600;">Dr. Nour Hassan</div>
-				<div style="color:#d6103d;">Pediatrician</div>
+				<div class="sliderbyname">Dr. Nour Hassan</div>
+				<div class="RedColor">Pediatrician</div>
 			</div>
 
-			<div class="slide" style="display:none;">
-				<blockquote style="font-size:34px;line-height:1.4;margin:0 0 16px;">
+			<div class="slide" >
+				<blockquote class="slidercontent">
 					“Reliable supply and GMP-grade quality — exactly what we need in our pharmacy.”
 				</blockquote>
-				<div style="font-weight:600;">Mona K.</div>
-				<div style="color:#d6103d;">Pharmacist</div>
+				<div class="sliderbyname">Mona K.</div>
+				<div class="RedColor">Pharmacist</div>
 			</div>
 
 			<!-- Dots -->
-			<div id="dots" aria-label="Testimonial navigation"
-				style="margin-top:20px;display:flex;gap:10px;justify-content:center;">
-				<button class="dot" aria-label="Slide 1"
-					style="width:10px;height:10px;border-radius:50%;border:1px solid #000;background:#000;"></button>
-				<button class="dot" aria-label="Slide 2"
-					style="width:10px;height:10px;border-radius:50%;border:1px solid #000;background:transparent;"></button>
-				<button class="dot" aria-label="Slide 3"
-					style="width:10px;height:10px;border-radius:50%;border:1px solid #000;background:transparent;"></button>
+			<div id="dots" aria-label="Testimonial navigation" class="Dotss">
+				<button class="dot dot1" aria-label="Slide 1" ></button>
+				<button class="dot dot2" aria-label="Slide 2"></button>
+				<button class="dot dot2" aria-label="Slide 3"></button>
 			</div>
 		</div>
 	</section>
@@ -1865,27 +1291,22 @@
 	<!-- Testimonials end -->
 
 	<!-- FAQ Section--------------------------------- -->
-	<section id="tetra-faq" style="padding:70px 0;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);margin-top: 5rem; ">
-		<div style="max-width:900px;margin:0 auto;padding:0 16px;">
-			<div style="text-align:center;margin-bottom:24px;">
-				<div style="letter-spacing:.18em;opacity:.6;font-size:14px;margin-bottom:8px;">FAQ</div>
-				<h2 style="font-size:36px;margin:0;    color: #2e6daf !important;">Frequently Asked Questions</h2>
-				<p style="color:#555;margin:10px 0 0;color: #d41943;">We’ve got answers.</p>
+	<section id="tetra-faq" class="faqsec">
+		<div class="faqdiv">
+			<div class="faq1">
+				<div class="faqtitle">FAQ</div>
+				<h2 class="faq2">Frequently Asked Questions</h2>
+				<p faqP >We’ve got answers.</p>
 			</div>
 
 			<!-- item 1 -->
-			<div class="tf-item"
-				style="border:1px solid #e8e8e8;border-radius:10px;margin-bottom:12px;overflow:hidden;">
-				<button class="tf-q" type="button" aria-expanded="false" aria-controls="tf-a-1" id="tf-q-1"
-					style="width:100%;display:flex;align-items:center;gap:10px;justify-content:space-between;text-align:left;background:#fff;border:0;padding:16px 18px;font-weight:600;cursor:pointer;">
+			<div class="tf-item faqitem">
+				<button class="tf-q faqbtn" type="button" aria-expanded="false" aria-controls="tf-a-1" id="tf-q-1">
 					<span>What is Selenium ACE used for ?</span>
-					<span class="tf-ic" aria-hidden="true"
-						style="display:inline-block;transition:transform .25s ease;">▾</span>
+					<span class="tf-ic faqspan" aria-hidden="true">▾</span>
 				</button>
-				<div class="tf-a" id="tf-a-1" role="region" aria-labelledby="tf-q-1"
-					style="display:block !important; max-height:0; overflow:hidden; transition:max-height .35s ease; padding:0 18px;">
-					<p style="color:#555;margin:12px 0 16px;">
+				<div class="tf-a faqanswer" id="tf-a-1" role="region" aria-labelledby="tf-q-1">
+					<p class="faq_P">
 						Selenium ACE is an antioxidant formula that helps boost immunity and protect cells from
 						oxidative stress
 					</p>
@@ -1893,17 +1314,13 @@
 			</div>
 
 			<!-- item 2 -->
-			<div class="tf-item"
-				style="border:1px solid #e8e8e8;border-radius:10px;margin-bottom:12px;overflow:hidden;">
-				<button class="tf-q" type="button" aria-expanded="false" aria-controls="tf-a-2" id="tf-q-2"
-					style="width:100%;display:flex;align-items:center;gap:10px;justify-content:space-between;text-align:left;background:#fff;border:0;padding:16px 18px;font-weight:600;cursor:pointer;">
+			<div class="tf-item faqitem">
+				<button class="tf-q faqbtn" type="button" aria-expanded="false" aria-controls="tf-a-2" id="tf-q-2">
 					<span>How long should I use Efalex to see results?</span>
-					<span class="tf-ic" aria-hidden="true"
-						style="display:inline-block;transition:transform .25s ease;">▾</span>
+					<span class="tf-ic faqspan" aria-hidden="true">▾</span>
 				</button>
-				<div class="tf-a" id="tf-a-2" role="region" aria-labelledby="tf-q-2"
-					style="display:block !important; max-height:0; overflow:hidden; transition:max-height .35s ease; padding:0 18px;">
-					<p style="color:#555;margin:12px 0 16px;">
+				<div class="tf-a faqanswer" id="tf-a-2" role="region" aria-labelledby="tf-q-2">
+					<p  class="faq_P">
 						Results may vary, but improvements in focus and visual performance are often noticed after
 						consistent use for several weeks
 					</p>
@@ -1911,34 +1328,26 @@
 			</div>
 
 			<!-- item 3 -->
-			<div class="tf-item"
-				style="border:1px solid #e8e8e8;border-radius:10px;margin-bottom:12px;overflow:hidden;">
-				<button class="tf-q" type="button" aria-expanded="false" aria-controls="tf-a-3" id="tf-q-3"
-					style="width:100%;display:flex;align-items:center;gap:10px;justify-content:space-between;text-align:left;background:#fff;border:0;padding:16px 18px;font-weight:600;cursor:pointer;">
+			<div class="tf-item faqitem">
+				<button class="tf-q faqbtn" type="button" aria-expanded="false" aria-controls="tf-a-3" id="tf-q-3">
 					<span>Where can I buy Tetra Pharma products ?</span>
-					<span class="tf-ic" aria-hidden="true"
-						style="display:inline-block;transition:transform .25s ease;">▾</span>
+					<span class="tf-ic faqspan" aria-hidden="true">▾</span>
 				</button>
-				<div class="tf-a" id="tf-a-3" role="region" aria-labelledby="tf-q-3"
-					style="display:block !important; max-height:0; overflow:hidden; transition:max-height .35s ease; padding:0 18px;">
-					<p style="color:#555;margin:12px 0 16px;">
+				<div class="tf-a faqanswer" id="tf-a-3" role="region" aria-labelledby="tf-q-3">
+					<p  class="faq_P">
 						Our products are available in major pharmacies across Egypt
 					</p>
 				</div>
 			</div>
 
 			<!-- item 4 -->
-			<div class="tf-item"
-				style="border:1px solid #e8e8e8;border-radius:10px;margin-bottom:12px;overflow:hidden;">
-				<button class="tf-q" type="button" aria-expanded="false" aria-controls="tf-a-4" id="tf-q-4"
-					style="width:100%;display:flex;align-items:center;gap:10px;justify-content:space-between;text-align:left;background:#fff;border:0;padding:16px 18px;font-weight:600;cursor:pointer;">
+			<div class="tf-item faqitem">
+				<button class="tf-q faqbtn" type="button" aria-expanded="false" aria-controls="tf-a-4" id="tf-q-4">
 					<span>Is Efalex available in both capsules and liquid form ?</span>
-					<span class="tf-ic" aria-hidden="true"
-						style="display:inline-block;transition:transform .25s ease;">▾</span>
+					<span class="tf-ic faqspan" aria-hidden="true">▾</span>
 				</button>
-				<div class="tf-a" id="tf-a-4" role="region" aria-labelledby="tf-q-4"
-					style="display:block !important; max-height:0; overflow:hidden; transition:max-height .35s ease; padding:0 18px;">
-					<p style="color:#555;margin:12px 0 16px;">
+				<div class="tf-a faqanswer" id="tf-a-4" role="region" aria-labelledby="tf-q-4">
+					<p  class="faq_P">
 						Yes, Efalex (Omega 3&6) comes in both capsules and liquid to suit different age groups and
 						preferences
 					</p>
@@ -1949,130 +1358,97 @@
 	<!-- faq end -->
 
 
-	<!-- -------footer-------- -->
-	<!-- ===== Footer with Split Panel (Info + Map) ===== -->
-	<!-- =============== FOOTER =============== -->
-	<footer style="background:#f8fafc; position:relative; margin-top:60px;">
-		<div style="max-width:1200px; margin:0 auto; padding:50px 18px;">
-			<div style="
-      display:grid; gap:28px;
-      grid-template-columns: 1.1fr 1fr;
-    ">
+ <!-- =============== FOOTER =============== -->
+<footer class="footerClass">
+  <div class="footercard">
+    <div class="footer">
 
-				<!-- LEFT: brand + contact + socials + career -->
-				<div>
-					<!-- Logo + name -->
-					<div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
-						<img src="./images/new logo.png" alt="Tetra Pharma" style="height:38px; width:auto;">
-						<h3 style="margin:0; font-size:24px; color:#d61d49;">Tetra Pharma</h3>
-					</div>
+      <!-- LEFT: brand + contact + socials + career -->
+      <div>
+        <!-- Logo + name -->
+        <div class="logoContent">
+          <img class="LogoImg" src="./images/new logo.png" alt="Tetra Pharma">
+        </div>
 
-					<!-- Contact blocks -->
-					<ul style="list-style:none; padding:0; margin:0 0 18px 0; color:#334155;">
-						<li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
-							<span style="color:#1157a4;">📍</span>
-							<span>13 Hessein shafik el masry street , Cairo, Egypt</span>
-						</li>
-						<li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
-							<span style="color:#1157a4;">📞</span>
-							<a href="tel:+20123456789" style="color:#334155; text-decoration:none;">+20 10 60802711</a>
-						</li>
-						<li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
-							<span style="color:#1157a4;">✉️</span>
-							<a href="mailto:info@tetrapharma.com"
-								style="color:#334155; text-decoration:none;">info@tetrapharma-eg.com</a>
-						</li>
-					</ul>
+        <!-- Contact blocks -->
+        <ul class="ContactDiv">
+          <li class="ContactLi">
+            <span class="color_blue">📍</span>
+            <span>13 Hessein shafik el masry street , Cairo, Egypt</span>
+          </li>
+          <li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
+            <span class="color_blue">📞</span>
+            <a href="tel:+20123456789" style="color:#334155; text-decoration:none;">+20 10 60802711</a>
+          </li>
+          <li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
+            <span class="color_blue">✉️</span>
+            <a href="mailto:info@tetrapharma.com" class="Email">info@tetrapharma-eg.com</a>
+          </li>
+        </ul>
 
-					<!-- Social -->
-					<div style="margin:16px 0 24px 0;">
-						<div style="font-weight:700; color:#0f172a; margin-bottom:10px;">Social</div>
-						<div style="display:flex; gap:12px; flex-wrap:wrap;">
-							<a href="https://www.facebook.com/tetrapharmaltd/"
-								style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">Facebook</a>
-							<a href="https://www.instagram.com/tetra_pharma/"
-								style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">Instagram</a>
-							<a href="#"
-								style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">TikTok</a>
-							<a href="#"
-								style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">LinkedIn</a>
-						</div>
-					</div>
+        <!-- Social -->
+        <div class="social">
+          <div class="socialDiv color_blue">Social</div>
+          <div class="socials">
+            <a class="Social1 color_blue" href="https://www.facebook.com/tetrapharmaltd/">Facebook</a>
+            <a  class="Social2 color_blue" href="https://www.instagram.com/tetra_pharma/" >Instagram</a>
+            <a  class="Social3 color_blue" href="#">TikTok</a>
+            <a  class="Social4 color_blue" href="#" >LinkedIn</a>
+          </div>
+        </div>
 
-					<!-- Career CTA -->
-					<div style="margin-top:10px;">
-						<div style="font-weight:800; color:#0f172a; font-size:20px; margin-bottom:10px;">Build your
-							Career</div>
-						<a href="./career page/career.html" style="
-            display:inline-block; text-decoration:none; 
-            background:linear-gradient(135deg,#1157a4,#0d4a8c);
-            color:#fff; font-weight:700; padding:12px 18px; border-radius:14px;
-            box-shadow:0 8px 20px rgba(17,87,164,.18);
-            transition: transform .18s ease, box-shadow .18s ease;
-          " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 26px rgba(17,87,164,.24)'"
-							onmouseout="this.style.transform=''; this.style.boxShadow='0 8px 20px rgba(17,87,164,.18)'">
-							Send your CV
-						</a>
-					</div>
-				</div>
+        <!-- Career CTA -->
+        <div class="career">
+          <div class="career1">Build your Career</div>
+          <a class="career2 blue_btn" href="../career page/career.html" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 26px rgba(17,87,164,.24)'" 
+             onmouseout="this.style.transform=''; this.style.boxShadow='0 8px 20px rgba(17,87,164,.18)'">
+            Send your CV
+          </a>
+        </div>
+      </div>
 
-				<!-- RIGHT: Google map -->
-				<div>
-					<div style="
-          background:#eef2f7; border-radius:18px; overflow:hidden; 
-          box-shadow:0 10px 24px rgba(2,8,23,.06);
-          min-height:280px;
-        ">
-						<!-- استخدمي iframe الجاهز لو عندك؛ ده مثال بسيط -->
-						<!-- Map : Tetra pharma Ltd. -->
-						<section style="padding:0; margin:0;">
-							<div style="
-      max-width:1200px;margin:0 auto;padding:0 16px;
-    ">
-								<div style="
-      position:relative; overflow:hidden;
-      border-radius:16px; box-shadow:0 12px 28px rgba(0,0,0,.08);
-      background:#f4f6f8;
-      height:420px;
-    ">
-									<iframe title="Tetra pharma Ltd. location"
-										src="https://www.google.com/maps?q=Tetra+pharma+Ltd.&output=embed"
-										style="border:0; position:absolute; inset:0; width:100%; height:100%;"
-										loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
-									</iframe>
-								</div>
+      <!-- RIGHT: Google map -->
+      <div>
+        <div class="map">
+          <!-- استخدمي iframe الجاهز لو عندك؛ ده مثال بسيط -->
+         <!-- Map : Tetra pharma Ltd. -->
+<section class="map1">
+  <div class="map2">
+    <div class="map3">
+      <iframe class="Iframe"
+        title="Tetra pharma Ltd. location"
+        src="https://www.google.com/maps?q=Tetra+pharma+Ltd.&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+    </div>
 
-								<!-- رابط فتح الموقع على جوجل مابس (اختياري) -->
-								<div style="text-align:right; margin-top:10px;">
-									<a href="https://www.google.com/maps?q=Tetra+pharma+Ltd." target="_blank" style="font:600 14px/1.2 ui-sans-serif,system-ui; text-decoration:none;
-                padding:10px 14px; border-radius:10px;
-                background:#1157a4; color:#fff; display:inline-block;">
-										Open in Google map
-									</a>
-								</div>
-							</div>
-						</section>
+    <!-- رابط فتح الموقع على جوجل مابس (اختياري) -->
+    <div class="google">
+      <a class="google_Link" href="https://www.google.com/maps?q=Tetra+pharma+Ltd."
+         target="_blank">
+       Open in Google map
+      </a>
+    </div>
+  </div>
+</section>
 
-					</div>
-				</div>
-			</div>
-		</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-		<!-- bottom bar -->
-		<div style="
-    border-top:1px solid #e5e7eb; 
-    background:#ffffff; 
-    ">
-			<div
-				style="max-width:1200px; margin:0 auto; padding:16px 18px; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">
-				<span style="color:#64748b;">© <span id="y_foot">2025</span> Tetra Pharma — All Rights Reserved</span>
-				<div
-					style="height:6px; width:120px; border-radius:999px; background:linear-gradient(90deg,#d61d49,#1157a4); opacity:.9;">
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- ============ /FOOTER ============ -->
+  <!-- bottom bar -->
+  <div class="bottomBar">
+    <div class="bottom1">
+      <span class="footerBottom">© <span id="y_foot">2025</span> Tetra Pharma — All Rights Reserved</span>
+      <div class="Footerbtm"></div>
+    </div>
+  </div>
+</footer>
+<!-- ============ /FOOTER ============ -->
+
 
 	<script>
 		// يحدّث سنة الحقوق تلقائياً
