@@ -131,3 +131,4 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+ document.getElementById('y_foot').textContent = new Date().getFullYear();

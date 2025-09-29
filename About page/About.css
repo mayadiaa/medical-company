@@ -17,7 +17,7 @@
 
 body {
 
-    h1,h2,h3,h4,h5,h6,p{
+    h1,h2,h3,h4,h5,h6,p,a{
         font-family: 'Playfair Display' !important;
     }
 
@@ -529,4 +529,140 @@ summary::-webkit-details-marker{display:none}
    border-radius:999px; 
    background:linear-gradient(90deg,#d61d49,#1157a4); 
    opacity:.9;
+}
+
+/* ====== FOOTER WRAPPER ====== */
+.footerClass{
+  background:#fff;
+  color:var(--text);
+  border-top:1px solid var(--border);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;
+}
+.footercard{
+  max-width:1180px;
+  margin:0 auto;
+  padding:28px 16px 10px;
+}
+
+/* شبّكي الأعمدة: يسار (معلومات) + يمين (الخريطة) */
+.footer{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap:28px;
+  align-items:flex-start;
+}
+
+/* ====== LEFT SIDE (brand + contact + socials + career) ====== */
+.logoContent{
+  display:flex; align-items:center; gap:12px;
+  margin-bottom:10px;
+}
+.LogoImg{ width:120px; height:auto; display:block; }
+.LogoH3{ margin:0; font-size:1.1rem; color:var(--blue); font-weight:800; }
+
+.ContactDiv{ list-style:none; margin:12px 0 6px; padding:0; }
+.ContactDiv li{ display:flex; align-items:flex-start; gap:10px; margin:10px 0; }
+.color_blue{ color:var(--blue); font-size:18px; line-height:1; }
+.Email, .ContactDiv a{ color:var(--text); text-decoration:none; }
+.Email:hover, .ContactDiv a:hover{ color:var(--red); }
+
+/* Socials */
+.social{ margin:14px 0 4px; }
+.socialDiv{ font-weight:800; color:var(--blue); margin-bottom:8px; }
+.socials{ display:flex; flex-wrap:wrap; gap:10px; }
+.socials a{
+  display:inline-block;
+  padding:7px 12px;
+  border-radius:999px;
+  border:1px solid #dbe7ff;
+  background:#eef4ff;
+  color:var(--blue);
+  font-weight:700;
+  text-decoration:none;
+  transition:transform .15s ease, box-shadow .15s ease, color .15s ease, background .15s ease;
+}
+.socials a:hover{
+  background:#fff5f7;
+  border-color:#ffd1db;
+  color:var(--red);
+  transform:translateY(-1px);
+  box-shadow:var(--shadow);
+}
+
+/* Career CTA */
+.career{ margin-top:16px; }
+.career1{ color:var(--muted); font-weight:700; margin-bottom:6px; }
+.career2{
+  display:inline-block;
+  padding:11px 16px;
+  border-radius:12px;
+  background:var(--blue);
+  color:#fff !important;
+  border:1px solid var(--blue);
+  text-decoration:none;
+  font-weight:800;
+  box-shadow:0 8px 20px rgba(17,87,164,.18);
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+}
+.career2:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 26px rgba(17,87,164,.24);
+  background:#0f4d90;
+  border-color:#0f4d90;
+}
+
+/* ====== RIGHT SIDE (map) ====== */
+.map1{ margin:0; }
+.map2{ display:block; }
+.map3{
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+/* خلى الخريطة مرنة بنسبة أبعاد */
+.Iframe{
+  width:100%;
+  aspect-ratio: 16 / 10;   /* يضبط الارتفاع تلقائيًا */
+  border:0;
+  display:block;
+  background:#eef2f7;
+}
+
+/* زر فتح الخريطة على جوجل */
+.google{ margin-top:10px; }
+.google_Link{
+  color:var(--blue);
+  text-decoration:none;
+  font-weight:800;
+}
+.google_Link:hover{ color:var(--red); }
+
+/* ====== BOTTOM BAR ====== */
+.bottomBar{
+  border-top:1px solid var(--border);
+  background:#fafcff;
+  margin-top:16px;
+}
+.bottom1{
+  max-width:1180px; margin:0 auto;
+  padding:12px 16px;
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;
+}
+.footerBottom{ color:#667; font-size:.95rem; }
+.Footerbtm{ height:0; }
+
+/* ====== RESPONSIVE ====== */
+/* تابلت وكمان */
+@media (max-width: 1024px){
+  .footer{ grid-template-columns: 1fr; }      /* كله تحت بعض */
+  .map{ margin-top:10px; }
+}
+/* موبايل صغير */
+@media (max-width: 520px){
+  .LogoImg{ width:110px; }
+  .career2{ width:100%; text-align:center; }
+  .socials{ gap:8px; }
+  .Iframe{ aspect-ratio: 4 / 3; }             /* ارتفاع أكبر ع الموبايل */
+  .bottom1{ justify-content:center; text-align:center; }
 }
