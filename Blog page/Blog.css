@@ -16,7 +16,6 @@ img{max-width:100%;display:block}
 .container{max-width:1180px;margin:0 auto;padding:0 20px}
 .section{padding:56px 0}
 
-
 /* ===== Header / Nav ===== */
 .site-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e9edf3;z-index:20}
 .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
@@ -106,10 +105,6 @@ img{max-width:100%;display:block}
 }
 .exp-text.expanded{ -webkit-line-clamp: unset }
 
-/* Footer */
-.footer{border-top:1px solid var(--border); background:#fafcff; padding:28px 0; color:#667}
-
-
 .footerClass{
   background:#f8fafc; 
   position:relative; 
@@ -172,7 +167,7 @@ img{max-width:100%;display:block}
 .Social1{
   padding:8px 12px; 
   border:1px solid #e5e7eb; 
-  border-radius:999px; color:#1157a4; 
+  border-radius:999px; color:#0556a4; 
   text-decoration:none;
    font-weight:600;
 }
@@ -180,7 +175,7 @@ img{max-width:100%;display:block}
   padding:8px 12px;
    border:1px solid #e5e7eb;
     border-radius:999px; 
-    color:#1157a4; 
+    color:#0556a4; 
     text-decoration:none;
      font-weight:600;
 }
@@ -188,7 +183,7 @@ img{max-width:100%;display:block}
   padding:8px 12px; 
   border:1px solid #e5e7eb;
    border-radius:999px; 
-   color:#1157a4; 
+   color:#0556a4; 
    text-decoration:none; 
    font-weight:600;
 }
@@ -196,7 +191,7 @@ img{max-width:100%;display:block}
   padding:8px 12px; 
   border:1px solid #e5e7eb;
    border-radius:999px; 
-   color:#1157a4; 
+   color:#0556a4; 
    text-decoration:none;
     font-weight:600;
 }
@@ -205,7 +200,7 @@ img{max-width:100%;display:block}
 }
 .career1{
   font-weight:800; 
-  color:#0f172a; 
+  color:#0556a4 !important; 
   font-size:20px; 
   margin-bottom:10px;
 }
@@ -422,39 +417,19 @@ img{max-width:100%;display:block}
   .Iframe{ aspect-ratio: 4 / 3; }             /* ارتفاع أكبر ع الموبايل */
   .bottom1{ justify-content:center; text-align:center; }
 }
-
-.color_red{
-    color: #d6103d !important;
+.bluecolor{
+  color: #0556a4 !important;
 }
-.color_blue{
-    color:#0556a4 !important;
+.redcolor{
+  color: #d6103d !important;
 }
-.ico{
-    color: #d6103d !important;
+.bluebttn{
+  background-color:#0556a4 !important;
+  color: #fff !important;
 }
-.blue_btn{
-    background-color: #0556a4 !important;
+.bluebttn:hover{
+  background-color: #fff !important;
+  border: 1px solid #0556a4 !important;
+  transition: all ease 600ms !important;
+  color: #0556a4 !important;
 }
-.color_gray{
-    color:#666
-}
-.color_black{
-    color: #1b1f23
-}
-.contact_P{
-    color: #d6103d;
-}
-.form1{
-    display: none !important;
-}
-.emailspan{
-    width: 35rem !important;
-}
-.lispan{
-    display:flex; align-items:flex-start; gap:10px; margin:10px 0;
-}
-@media (max-width: 900px) {
-			footer>div>div {
-				grid-template-columns: 1fr !important;
-			}
-		}
