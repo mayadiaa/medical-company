@@ -224,16 +224,26 @@
 	<header id="masthead" itemscope="itemscope" itemtype="https://schema.org/WPHeader" class="aheto-header  ">
 		<!-- ===== Navbar Transparent on Video & Sticky on Scroll ===== -->
 		<!-- NAVBAR -->
-<nav id="mainNav">
-  <div class="logo"><img class="navImg" src="./images/new logo.png" alt="Tetra Pharma"></div>
-  <div class="links">
-    <a href="../index.html" class="active">Home</a>
-    <a href="./About page/About.html">About</a>
-    <a href="./ProductPage/product.html">Products</a>
-    <a href="./FaqPage/Faq.html">FAQ</a>
-    <a href="./contactPage/contact.html">Contact</a>
-    <a href="index.html#blogs">Blogs</a>
-    <a class="career_btn" href="./career page/career.html" target="_blank">Career</a>
+<nav id="mainNav" class="site-nav">
+  <div class="nav-inner">
+    <a class="logo" href="../index.html" aria-label="Tetra Pharma">
+      <img class="navImg" src="./images/new logo.png" alt="Tetra Pharma" />
+    </a>
+
+    <!-- زر الموبايل -->
+    <button class="burger" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div id="navLinks" class="links">
+      <a href="../index.html" class="active">Home</a>
+      <a href="./About page/About.html">About</a>
+      <a href="./ProductPage/product.html">Products</a>
+      <a href="./FaqPage/Faq.html">FAQ</a>
+      <a href="./contactPage/contact.html">Contact</a>
+      <a href="index.html#blogs">Blogs</a>
+      <a class="career_btn" href="./career page/career.html" target="_blank">Career</a>
+    </div>
   </div>
 </nav>
 
@@ -1174,7 +1184,7 @@
 														<form action="/#wpcf7-f6-p7-o1" method="post"
 															class="wpcf7-form init" aria-label="Contact form"
 															novalidate="novalidate" data-status="init">
-															<div style="display: none;">
+															<div class="form1">
 																<input type="hidden" name="_wpcf7" value="6" />
 																<input type="hidden" name="_wpcf7_version"
 																	value="6.0.6" />
@@ -1195,16 +1205,16 @@
 																		name="your-message"></textarea></span>
 															</p>
 															<div class="name-email">
-																<p><span style="width: 35rem;"
-																		class="wpcf7-form-control-wrap"
+																<p><span
+																		class="emailspan wpcf7-form-control-wrap"
 																		data-name="your-name"><input size="40"
 																			maxlength="400"
 																			class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
 																			aria-required="true" aria-invalid="false"
 																			placeholder="Your Name*" value=""
 																			type="text" name="your-name" /></span><span
-																		style="width: 35rem;"
-																		class="wpcf7-form-control-wrap"
+																		
+																		class="emailspan wpcf7-form-control-wrap"
 																		data-name="your-email"><input size="40"
 																			maxlength="400"
 																			class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email"
@@ -1376,11 +1386,11 @@
             <span class="color_blue">📍</span>
             <span>13 Hessein shafik el masry street , Cairo, Egypt</span>
           </li>
-          <li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
+          <li class="lispan">
             <span class="color_blue">📞</span>
             <a href="tel:+20123456789" style="color:#334155; text-decoration:none;">+20 10 60802711</a>
           </li>
-          <li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
+          <li class="lispan">
             <span class="color_blue">✉️</span>
             <a href="mailto:info@tetrapharma.com" class="Email">info@tetrapharma-eg.com</a>
           </li>
@@ -1448,25 +1458,6 @@
   </div>
 </footer>
 <!-- ============ /FOOTER ============ -->
-
-
-	<script>
-		// يحدّث سنة الحقوق تلقائياً
-		(function () {
-			var el = document.getElementById('y_foot');
-			if (el) el.textContent = new Date().getFullYear();
-		})();
-	</script>
-
-	<!-- Responsive tweak -->
-	<style>
-		@media (max-width: 900px) {
-			footer>div>div {
-				grid-template-columns: 1fr !important;
-			}
-		}
-	</style>
-
 
 	<!--  -->
 	<div class="site-search" id="search-box">
@@ -1770,145 +1761,12 @@
 		src="https://snapster.foxthemes.me/wp-content/plugins/aheto/assets/frontend/vendors/script.min.js"
 		id="aheto-main-js"></script>
 	<script type="text/javascript">
-		function initElements($scope) {
-			if (typeof elementor !== "undefined" && typeof elementor.widgetsCache["aheto_custom-post-types"].controls !== "undefined") {
-				elementor.widgetsCache["aheto_custom-post-types"].controls.taxonomies.select2options.ajax = {
-					url: 'https://snapster.foxthemes.me/wp-admin/admin-ajax.php',
-					dataType: 'json',
-					data: function (params) {
-						return {
-							query: params.term,
-							action: 'autocomplete_aheto_taxonomies'
-						}
-					},
-					processResults: function (data) {
-						return {
-							results: data
-						}
-					}
-				}
-				elementor.widgetsCache["aheto_custom-post-types"].controls.exclude.select2options.ajax = {
-					url: 'https://snapster.foxthemes.me/wp-admin/admin-ajax.php',
-					dataType: 'json',
-					data: function (params) {
-						return {
-							query: params.term,
-							action: 'autocomplete_aheto_exclude_field_search',
-							postType: jQuery('select', '.elementor-control-post_type.elementor-control-type-select').val()
-						}
-					},
-					processResults: function (data) {
-						return {
-							results: data
-						}
-					}
-				}
-				elementor.widgetsCache["aheto_custom-post-types"].controls.include.select2options.ajax = {
-					url: 'https://snapster.foxthemes.me/wp-admin/admin-ajax.php',
-					dataType: 'json',
-					data: function (params) {
-						return {
-							query: params.term,
-							action: 'autocomplete_aheto_include_field_search'
-						}
-					},
-					processResults: function (data) {
-						return {
-							results: data
-						}
-					}
-				}
-			}
-		}
-		window.addEventListener('load', function () {
-			setTimeout(() => {
-				initElements();
-			}, 4000);
-		});
-		(typeof elementor !== "undefined") && elementor.hooks.addAction('panel/open_editor/widget', function (panel, model, view) {
-			if ('aheto_custom-post-types' === model.attributes.widgetType) {
-				initElements();
-				setTimeout(() => {
-					initElements();
-				}, 1000);
-			}
-		});
+
 	</script>
-	<script type="text/javascript">
-		function initElements($scope) {
-			if (typeof elementor !== "undefined" && typeof elementor.widgetsCache["aheto_custom-post-types"].controls !== "undefined") {
-				elementor.widgetsCache["aheto_custom-post-types"].controls.taxonomies.select2options.ajax = {
-					url: 'https://snapster.foxthemes.me/wp-admin/admin-ajax.php',
-					dataType: 'json',
-					data: function (params) {
-						return {
-							query: params.term,
-							action: 'autocomplete_aheto_taxonomies'
-						}
-					},
-					processResults: function (data) {
-						return {
-							results: data
-						}
-					}
-				}
-				elementor.widgetsCache["aheto_custom-post-types"].controls.exclude.select2options.ajax = {
-					url: 'https://snapster.foxthemes.me/wp-admin/admin-ajax.php',
-					dataType: 'json',
-					data: function (params) {
-						return {
-							query: params.term,
-							action: 'autocomplete_aheto_exclude_field_search',
-							postType: jQuery('select', '.elementor-control-post_type.elementor-control-type-select').val()
-						}
-					},
-					processResults: function (data) {
-						return {
-							results: data
-						}
-					}
-				}
-				elementor.widgetsCache["aheto_custom-post-types"].controls.include.select2options.ajax = {
-					url: 'https://snapster.foxthemes.me/wp-admin/admin-ajax.php',
-					dataType: 'json',
-					data: function (params) {
-						return {
-							query: params.term,
-							action: 'autocomplete_aheto_include_field_search'
-						}
-					},
-					processResults: function (data) {
-						return {
-							results: data
-						}
-					}
-				}
-			}
-		}
-		window.addEventListener('load', function () {
-			setTimeout(() => {
-				initElements();
-			}, 4000);
-		});
-		(typeof elementor !== "undefined") && elementor.hooks.addAction('panel/open_editor/widget', function (panel, model, view) {
-			if ('aheto_custom-post-types' === model.attributes.widgetType) {
-				initElements();
-				setTimeout(() => {
-					initElements();
-				}, 1000);
-			}
-		});
-	</script>
+	
 	<script src="index.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-	<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const p = location.pathname.toLowerCase();
-  if (p.endsWith('/') || p.endsWith('/index.html')) {
-    document.querySelector('#mainNav .links a[href$="index.html"]')?.classList.add('active');
-  }
-});
-</script>
+
 
 </body>
 

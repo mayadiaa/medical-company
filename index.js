@@ -152,3 +152,146 @@ window.addEventListener('DOMContentLoaded', () => {
 							io.observe(el);
 						});
 					})();
+          // home
+          (function () {
+			var el = document.getElementById('y_foot');
+			if (el) el.textContent = new Date().getFullYear();
+		})();
+
+    	(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+    document.addEventListener('DOMContentLoaded', () => {
+  const p = location.pathname.toLowerCase();
+  if (p.endsWith('/') || p.endsWith('/index.html')) {
+    document.querySelector('#mainNav .links a[href$="index.html"]')?.classList.add('active');
+  }
+});
+		function initElements($scope) {
+			if (typeof elementor !== "undefined" && typeof elementor.widgetsCache["aheto_custom-post-types"].controls !== "undefined") {
+				elementor.widgetsCache["aheto_custom-post-types"].controls.taxonomies.select2options.ajax = {
+					url: 'https://snapster.foxthemes.me/wp-admin/admin-ajax.php',
+					dataType: 'json',
+					data: function (params) {
+						return {
+							query: params.term,
+							action: 'autocomplete_aheto_taxonomies'
+						}
+					},
+					processResults: function (data) {
+						return {
+							results: data
+						}
+					}
+				}
+				elementor.widgetsCache["aheto_custom-post-types"].controls.exclude.select2options.ajax = {
+					url: 'https://snapster.foxthemes.me/wp-admin/admin-ajax.php',
+					dataType: 'json',
+					data: function (params) {
+						return {
+							query: params.term,
+							action: 'autocomplete_aheto_exclude_field_search',
+							postType: jQuery('select', '.elementor-control-post_type.elementor-control-type-select').val()
+						}
+					},
+					processResults: function (data) {
+						return {
+							results: data
+						}
+					}
+				}
+				elementor.widgetsCache["aheto_custom-post-types"].controls.include.select2options.ajax = {
+					url: 'https://snapster.foxthemes.me/wp-admin/admin-ajax.php',
+					dataType: 'json',
+					data: function (params) {
+						return {
+							query: params.term,
+							action: 'autocomplete_aheto_include_field_search'
+						}
+					},
+					processResults: function (data) {
+						return {
+							results: data
+						}
+					}
+				}
+			}
+		}
+		window.addEventListener('load', function () {
+			setTimeout(() => {
+				initElements();
+			}, 4000);
+		});
+		(typeof elementor !== "undefined") && elementor.hooks.addAction('panel/open_editor/widget', function (panel, model, view) {
+			if ('aheto_custom-post-types' === model.attributes.widgetType) {
+				initElements();
+				setTimeout(() => {
+					initElements();
+				}, 1000);
+			}
+		});
+    		function initElements($scope) {
+			if (typeof elementor !== "undefined" && typeof elementor.widgetsCache["aheto_custom-post-types"].controls !== "undefined") {
+				elementor.widgetsCache["aheto_custom-post-types"].controls.taxonomies.select2options.ajax = {
+					url: 'https://snapster.foxthemes.me/wp-admin/admin-ajax.php',
+					dataType: 'json',
+					data: function (params) {
+						return {
+							query: params.term,
+							action: 'autocomplete_aheto_taxonomies'
+						}
+					},
+					processResults: function (data) {
+						return {
+							results: data
+						}
+					}
+				}
+				elementor.widgetsCache["aheto_custom-post-types"].controls.exclude.select2options.ajax = {
+					url: 'https://snapster.foxthemes.me/wp-admin/admin-ajax.php',
+					dataType: 'json',
+					data: function (params) {
+						return {
+							query: params.term,
+							action: 'autocomplete_aheto_exclude_field_search',
+							postType: jQuery('select', '.elementor-control-post_type.elementor-control-type-select').val()
+						}
+					},
+					processResults: function (data) {
+						return {
+							results: data
+						}
+					}
+				}
+				elementor.widgetsCache["aheto_custom-post-types"].controls.include.select2options.ajax = {
+					url: 'https://snapster.foxthemes.me/wp-admin/admin-ajax.php',
+					dataType: 'json',
+					data: function (params) {
+						return {
+							query: params.term,
+							action: 'autocomplete_aheto_include_field_search'
+						}
+					},
+					processResults: function (data) {
+						return {
+							results: data
+						}
+					}
+				}
+			}
+		}
+		window.addEventListener('load', function () {
+			setTimeout(() => {
+				initElements();
+			}, 4000);
+		});
+		(typeof elementor !== "undefined") && elementor.hooks.addAction('panel/open_editor/widget', function (panel, model, view) {
+			if ('aheto_custom-post-types' === model.attributes.widgetType) {
+				initElements();
+				setTimeout(() => {
+					initElements();
+				}, 1000);
+			}
+		});

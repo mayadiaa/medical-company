@@ -2497,3 +2497,90 @@ body .aheto-footer a {
 .contact_P{
     color: #d6103d;
 }
+.form1{
+    display: none !important;
+}
+.emailspan{
+    width: 35rem !important;
+}
+.lispan{
+    display:flex; align-items:flex-start; gap:10px; margin:10px 0;
+}
+@media (max-width: 900px) {
+			footer>div>div {
+				grid-template-columns: 1fr !important;
+			}
+		}
+        :root{
+  --active:#d6103d;
+  --blue:#1157a4;
+  --border:#e9edf3;
+  --shadow:0 10px 24px rgba(0,0,0,.06);
+}
+
+.site-nav{
+  position: sticky; top:0; z-index:50;
+  background:#fff; border-bottom:1px solid var(--border);
+}
+.site-nav .nav-inner{
+  max-width:1180px; margin:0 auto; padding:0 16px;
+  height:68px; display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+.navImg{height:40px; width:auto; display:block}
+
+/* الروابط (دسكتوب) */
+.links{
+  display:flex; align-items:center; gap:26px;
+}
+.links a{
+  position:relative; text-decoration:none; color:#1f2937; font-weight:700;
+  padding:10px 6px; transition:color .2s ease;
+}
+.links a::after{
+  content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:transparent;
+  transform:scaleX(0); transform-origin:left; transition:transform .2s ease, background .2s ease;
+}
+.links a:hover,
+.links a:focus-visible{ color:var(--active) }
+.links a:hover::after,
+.links a:focus-visible::after{ background:var(--active); transform:scaleX(1) }
+.links a.active{ color:var(--active) }
+.links a.active::after{ background:var(--active); transform:scaleX(1) }
+
+/* زر Career */
+.career_btn{
+  margin-left:8px; padding:10px 16px; border-radius:999px;
+  background:#0f6efc; color:#fff !important; border:1px solid #0f6efc;
+  box-shadow:0 8px 20px rgba(15,110,252,.18);
+}
+.career_btn::after{display:none}
+.career_btn:hover{ background:#0c5ddb; border-color:#0c5ddb }
+
+/* ====== Burger (مخفي على الدسكتوب) ====== */
+.burger{
+  display:none; width:44px; height:44px; border:0; background:transparent; cursor:pointer;
+  align-items:center; justify-content:center; border-radius:10px;
+}
+.burger span{
+  display:block; width:24px; height:2px; background:#1f2937; border-radius:2px; position:relative;
+  transition:transform .2s ease, opacity .2s ease, background .2s ease;
+}
+.burger span + span{ margin-top:5px }
+.burger.is-open span:nth-child(1){ transform:translateY(7px) rotate(45deg); background:var(--active) }
+.burger.is-open span:nth-child(2){ opacity:0 }
+.burger.is-open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); background:var(--active) }
+
+/* ====== Responsive ====== */
+@media (max-width: 900px){
+  .burger{ display:flex }
+  /* القائمة تتحول لدروب داون */
+  .links{
+    position:absolute; left:0; right:0; top:68px;
+    background:#fff; border-bottom:1px solid var(--border);
+    box-shadow:var(--shadow);
+    display:none; flex-direction:column; align-items:flex-start; gap:0; padding:8px 12px;
+  }
+  .links.open{ display:flex }
+  .links a{ width:100%; padding:12px 10px }
+  .career_btn{ width:100%; text-align:center; margin:6px 0 10px }
+}
