@@ -295,3 +295,24 @@ window.addEventListener('DOMContentLoaded', () => {
 				}, 1000);
 			}
 		});
+
+
+    // blog
+        // Toggle Read more / Read less لكل كرت
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.exp-toggle');
+  if (!btn) return;
+
+  const sel = btn.getAttribute('data-target');
+  const target = document.querySelector(sel);
+  if (!target) return;
+
+  // لو محددة عدد سطور مختلف
+  const lines = target.getAttribute('data-lines');
+  if (lines) target.style.setProperty('--lines', lines);
+
+  target.classList.toggle('expanded');
+  const expanded = target.classList.contains('expanded');
+  btn.textContent = expanded ? 'Read less' : 'Read more';
+  btn.setAttribute('aria-expanded', expanded);
+});
