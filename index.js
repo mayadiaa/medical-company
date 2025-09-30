@@ -1,18 +1,60 @@
-// nav scroll
-		window.addEventListener('scroll', () => {
-				const nav = document.getElementById('mainNav');
-				const links = document.querySelectorAll('#mainNav a');
+(function () {
+  const nav       = document.getElementById('mainNav');
+  const burger    = nav.querySelector('.burger');
+  const offcanvas = document.getElementById('offcanvas');
+  const backdrop  = nav.querySelector('.backdrop');
 
-				if (window.scrollY > 50) {
-					nav.classList.add('scrolled');          // ده اللي يلوّنهم أزرق من الـCSS
-					// لو عايزة إجبار اللون بالأستايل المباشر بدل الـCSS علشان أي !important قديم:
-					// links.forEach(a => a.style.color = '#1157a4');
-				} else {
-					nav.classList.remove('scrolled');       // يرجعهم أبيض
-					// links.forEach(a => a.style.color = '#fff');
-				}
-			}, { passive: true });
+  // Overlay -> White on scroll
+  const onScroll = () => {
+    const overlay = nav.classList.contains('overlay') || nav.dataset.overlay === 'true';
+    if (!overlay) return;
+    nav.classList.toggle('scrolled', (window.scrollY || document.documentElement.scrollTop) > 10);
+  };
+  window.addEventListener('scroll', onScroll, { passive:true });
+  window.addEventListener('load', onScroll);
 
+  // Off-canvas open/close
+  const openMenu  = () => { document.body.classList.add('nav-open');  burger.classList.add('is-open');  burger.setAttribute('aria-expanded','true');  offcanvas.setAttribute('aria-hidden','false'); backdrop.hidden = false; };
+  const closeMenu = () => { document.body.classList.remove('nav-open'); burger.classList.remove('is-open'); burger.setAttribute('aria-expanded','false'); offcanvas.setAttribute('aria-hidden','true');  backdrop.hidden = true;  };
+  burger.addEventListener('click', () => document.body.classList.contains('nav-open') ? closeMenu() : openMenu());
+  backdrop.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeMenu(); });
+  offcanvas.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  // Language dropdowns (desktop + mobile) – bind all
+  const applyLang = (code) => {
+    const html = document.documentElement;
+    if (code === 'ar') { html.lang='ar'; html.dir='rtl'; }
+    else { html.lang='en'; html.dir='ltr'; }
+    document.querySelectorAll('.dropdown.lang .current').forEach(s => s.textContent = code.toUpperCase());
+    try { localStorage.setItem('tplang', code); } catch(e){}
+  };
+  try {
+    const saved = localStorage.getItem('tplang');
+    if (saved) applyLang(saved);
+  } catch(e){}
+
+  const bindDropdown = (root) => {
+    const trigger = root.querySelector('.lang-trigger');
+    const menu    = root.querySelector('.lang-menu');
+    const close   = () => { root.classList.remove('open'); trigger.setAttribute('aria-expanded','false'); };
+    trigger.addEventListener('click', (e)=>{ e.stopPropagation(); const open = !root.classList.contains('open'); root.classList.toggle('open', open); trigger.setAttribute('aria-expanded', open); });
+    menu.querySelectorAll('[data-lang]').forEach(btn => btn.addEventListener('click', ()=>{ applyLang(btn.dataset.lang); close(); }));
+    document.addEventListener('click', (e)=>{ if(!root.contains(e.target)) close(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
+  };
+  document.querySelectorAll('.dropdown.lang').forEach(bindDropdown);
+
+  // Active link (اختياري)
+  const markActive = () => {
+    const here = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.links a, .mobile-links a').forEach(a=>{
+      const file = a.getAttribute('href')?.split('/').pop();
+      a.classList.toggle('active', file && here.includes(file));
+    });
+  };
+  markActive();
+})();
 
 // Simple carousel logic (safe init)
 window.addEventListener('DOMContentLoaded', () => {

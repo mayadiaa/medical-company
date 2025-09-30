@@ -221,22 +221,87 @@
 			<div></div>
 		</div>
 	</div>
-	<header id="masthead" itemscope="itemscope" itemtype="https://schema.org/WPHeader" class="aheto-header  ">
-		<!-- ===== Navbar Transparent on Video & Sticky on Scroll ===== -->
-		<!-- NAVBAR -->
-		 
-<nav id="mainNav">
-  <div class="logo"><img class="navImg" src="./images/new logo.png" alt="Tetra Pharma"></div>
-  <div class="links">
-    <a href="../index.html" class="active">Home</a>
-    <a href="./About page/About.html">About</a>
-    <a href="./ProductPage/product.html">Products</a>
-    <a href="./FaqPage/Faq.html">FAQ</a>
-    <a href="./contactPage/contact.html">Contact</a>
-    <a href="index.html#blogs">Blogs</a>
-    <a class="career_btn" href="./career page/career.html" target="_blank">Career</a>
+<!-- اربطي الملفات -->
+<link rel="stylesheet" href="nav.css" />
+
+<header id="mainNav" class="site-nav overlay" data-overlay="true">
+  <div class="nav-inner">
+    <!-- الشعار (يسار) -->
+    <a class="logo" href="index.html" aria-label="Tetra Pharma">
+      <img class="navImg" src="images/new logo.png" alt="Tetra Pharma" />
+    </a>
+
+    <!-- روابط الديسكتوب (يمين) -->
+    <nav class="links" aria-label="Primary">
+      <a href="index.html" class="active">Home</a>
+      <a href="About.html">About</a>
+      <a href="product.html">Products</a>
+      <a href="Faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="Blog.html">Blogs</a>
+    </nav>
+
+    <!-- أكشنز: لغة + Career + Burger -->
+    <div class="right">
+      <!-- لغة (ديسكتوب) -->
+      <div class="dropdown lang lang--desk" aria-label="Language">
+        <button class="lang-trigger" aria-haspopup="menu" aria-expanded="false" title="Language">
+          <!-- globe -->
+          <svg class="globe" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 0c3.5 0 6.5 1.9 8.1 4.7H3.9C5.5 3.9 8.5 2 12 2Zm0 20c-3.5 0-6.5-1.9-8.1-4.7h16.2C18.5 20.1 15.5 22 12 22ZM2.6 9.3h18.8c.2.9.2 1.5.2 1.7s0 .8-.2 1.7H2.6A9.7 9.7 0 0 1 2.4 12c0-.2 0-.8.2-1.7Z" fill="currentColor"/>
+          </svg>
+          <span class="current">EN</span>
+        </button>
+        <ul class="lang-menu" role="menu">
+          <li role="none"><button type="button" role="menuitem" data-lang="ar">العربية</button></li>
+          <li role="none"><button type="button" role="menuitem" data-lang="en">English</button></li>
+        </ul>
+      </div>
+
+      <a class="career_btn" href="career.html" target="_blank">Career</a>
+
+      <!-- لغة (موبايل) – ظاهرة جنب البرجر -->
+      <div class="dropdown lang lang--mobile" aria-label="Language">
+        <button class="lang-trigger" aria-haspopup="menu" aria-expanded="false" title="Language">
+          <svg class="globe" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 0c3.5 0 6.5 1.9 8.1 4.7H3.9C5.5 3.9 8.5 2 12 2Zm0 20c-3.5 0-6.5-1.9-8.1-4.7h16.2C18.5 20.1 15.5 22 12 22ZM2.6 9.3h18.8c.2.9.2 1.5.2 1.7s0 .8-.2 1.7H2.6A9.7 9.7 0 0 1 2.4 12c0-.2 0-.8.2-1.7Z" fill="currentColor"/>
+          </svg>
+          <span class="current">EN</span>
+        </button>
+        <ul class="lang-menu" role="menu">
+          <li role="none"><button type="button" role="menuitem" data-lang="ar">العربية</button></li>
+          <li role="none"><button type="button" role="menuitem" data-lang="en">English</button></li>
+        </ul>
+      </div>
+
+      <!-- Burger -->
+      <button class="burger" aria-controls="offcanvas" aria-expanded="false" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
-</nav>
+
+  <!-- منيو الموبايل (Off-canvas) -->
+  <aside id="offcanvas" class="offcanvas" aria-hidden="true">
+    <nav class="mobile-links" aria-label="Mobile menu">
+      <a href="index.html" class="active">Home</a>
+      <a href="About.html">About</a>
+      <a href="product.html">Products</a>
+      <a href="Faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="Blog.html">Blogs</a>
+    </nav>
+
+    <div class="mobile-actions">
+      <a class="career_btn" href="career.html" target="_blank">Career</a>
+    </div>
+  </aside>
+
+  <div class="backdrop" hidden></div>
+</header>
+
+<script src="nav.js" defer></script>
+
 
 		<!-- HERO VIDEO -->
 	<div class="heroVideo">
