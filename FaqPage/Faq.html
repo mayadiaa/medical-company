@@ -8,22 +8,31 @@
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
-<nav id="mainNav">
-  <div class="logo">
-    <img class="navImg" src="../images/new logo.png" alt="Tetra Pharma" />
-  </div>
-  <div class="links">
-    <a href="../index.html" target="_blank">Home</a>
-    <a href="../About page/About.html" target="_blank">About</a>
-    <a href="../ProductPage/product.html" target="_blank">Products</a>
-    <!-- خليها تشير لصفحة FAQ مباشرة -->
-    <a href="./Faq.html" target="_blank" class="active">FAQ</a>
-    <a href="../contactPage/contact.html" target="_blank">Contact</a>
-    <a href="../Blog page/Blog.html" target="_blank">Blogs</a>
-    <a class="career_btn" href="./career page/career.html" target="_blank">Career</a>
-  </div>
-</nav>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">
+        <!-- <span class="mark">TP</span> -->
+        <div class="brand">
+          <img class="LogoImg" src="../images/new logo.png" alt="Tetra Pharma" />
+        </div>
+      </a>
+
+      <!-- Mobile toggle -->
+      <input id="nav-toggle" type="checkbox" aria-label="Toggle navigation">
+      <label for="nav-toggle" class="burger" aria-hidden="true"><span></span><span></span><span></span></label>
+
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../About page/About.html" >About</a>
+        <a href="../ProductPage/product.html">Products</a>
+        <a href="../FaqPage/Faq.html" class="active">FAQ</a>
+        <a href="../contactPage/contact.html">Contact</a>
+        <a href="../Blog page/Blog.html">Blogs</a>
+        <a href="../career page/career.html" class="btn cta">Career</a>
+      </nav>
+    </div>
+  </header>
 
 <!-- ===== HERO ===== -->
 <section class="hero">
@@ -50,7 +59,7 @@
     <!-- Main -->
     <div>
       <div class="faq-controls">
-        <div class="search" style="flex:1 1 auto; max-width:520px;">
+        <div class="search searchstyle">
           <span class="sfx">🔎</span>
           <input id="faqSearch" type="search" placeholder="Search in questions..." />
         </div>
@@ -116,7 +125,7 @@
       </div>
 
       <!-- Filter chips -->
-      <div class="faq-controls" style="margin-top:14px">
+      <div class="faq-controls controls" >
         <span class="chip" data-tag="science">Science</span>
         <span class="chip" data-tag="quality">Quality</span>
         <span class="chip" data-tag="usage">Usage</span>
@@ -129,59 +138,49 @@
     </div>
   </div>
 </section>
- <!-- =============== FOOTER =============== -->
-<footer style="background:#f8fafc; position:relative; margin-top:60px;">
-  <div style="max-width:1200px; margin:0 auto; padding:50px 18px;">
-    <div style="
-      display:grid; gap:28px;
-      grid-template-columns: 1.1fr 1fr;
-    ">
+<!-- =============== FOOTER =============== -->
+<footer class="footerClass">
+  <div class="footercard">
+    <div class="footer">
 
       <!-- LEFT: brand + contact + socials + career -->
       <div>
         <!-- Logo + name -->
-        <div style="display:flex; align-items:center; gap:14px; margin-bottom:14px;">
-          <img src="../images/new logo.png" alt="Tetra Pharma" style="height:38px; width:auto;">
-          <h3 style="margin:0; font-size:24px; color:#d61d49;">Tetra Pharma</h3>
+        <div class="logoContent">
+          <img class="LogoImg" src="../images/new logo.png" alt="Tetra Pharma">
         </div>
 
         <!-- Contact blocks -->
-        <ul style="list-style:none; padding:0; margin:0 0 18px 0; color:#334155;">
-          <li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
-            <span style="color:#1157a4;">📍</span>
+        <ul class="ContactDiv">
+          <li class="ContactLi">
+            <span class="bluecolor">📍</span>
             <span>13 Hessein shafik el masry street , Cairo, Egypt</span>
           </li>
-          <li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
-            <span style="color:#1157a4;">📞</span>
+          <li class="footericn">
+            <span class="bluecolor">📞</span>
             <a href="tel:+20123456789" style="color:#334155; text-decoration:none;">+20 10 60802711</a>
           </li>
-          <li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
-            <span style="color:#1157a4;">✉️</span>
-            <a href="mailto:info@tetrapharma.com" style="color:#334155; text-decoration:none;">info@tetrapharma-eg.com</a>
+          <li class="footericn">
+            <span class="bluecolor">✉️</span>
+            <a href="mailto:info@tetrapharma.com" class="Email">info@tetrapharma-eg.com</a>
           </li>
         </ul>
 
         <!-- Social -->
-        <div style="margin:16px 0 24px 0;">
-          <div style="font-weight:700; color:#0f172a; margin-bottom:10px;">Social</div>
-          <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <a href="https://www.facebook.com/tetrapharmaltd/" style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">Facebook</a>
-            <a href="https://www.instagram.com/tetra_pharma/" style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">Instagram</a>
-            <a href="#" style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">TikTok</a>
-            <a href="#" style="padding:8px 12px; border:1px solid #e5e7eb; border-radius:999px; color:#1157a4; text-decoration:none; font-weight:600;">LinkedIn</a>
+        <div class="social">
+          <div class="socialDiv redcolor">Social</div>
+          <div class="socials">
+            <a class="Social1 bluecolor" href="https://www.facebook.com/tetrapharmaltd/">Facebook</a>
+            <a  class="Social2 bluecolor" href="https://www.instagram.com/tetra_pharma/" >Instagram</a>
+            <a  class="Social3 bluecolor" href="#">TikTok</a>
+            <a  class="Social4 bluecolor" href="#" >LinkedIn</a>
           </div>
         </div>
 
         <!-- Career CTA -->
-        <div style="margin-top:10px;">
-          <div style="font-weight:800; color:#0f172a; font-size:20px; margin-bottom:10px;">Build your Career</div>
-          <a href="../career page/career.html" style="
-            display:inline-block; text-decoration:none; 
-            background:linear-gradient(135deg,#1157a4,#0d4a8c);
-            color:#fff; font-weight:700; padding:12px 18px; border-radius:14px;
-            box-shadow:0 8px 20px rgba(17,87,164,.18);
-            transition: transform .18s ease, box-shadow .18s ease;
-          " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 26px rgba(17,87,164,.24)'" 
+        <div class="career">
+          <div class="career1 bluecolor">Build your Career</div>
+          <a class="career2 bluebttn" href="../career page/career.html" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 26px rgba(17,87,164,.24)'" 
              onmouseout="this.style.transform=''; this.style.boxShadow='0 8px 20px rgba(17,87,164,.18)'">
             Send your CV
           </a>
@@ -190,27 +189,15 @@
 
       <!-- RIGHT: Google map -->
       <div>
-        <div style="
-          background:#eef2f7; border-radius:18px; overflow:hidden; 
-          box-shadow:0 10px 24px rgba(2,8,23,.06);
-          min-height:280px;
-        ">
+        <div class="map">
           <!-- استخدمي iframe الجاهز لو عندك؛ ده مثال بسيط -->
          <!-- Map : Tetra pharma Ltd. -->
-<section style="padding:0; margin:0;">
-  <div style="
-      max-width:1200px;margin:0 auto;padding:0 16px;
-    ">
-    <div style="
-      position:relative; overflow:hidden;
-      border-radius:16px; box-shadow:0 12px 28px rgba(0,0,0,.08);
-      background:#f4f6f8;
-      height:420px;
-    ">
-      <iframe
+<section class="map1">
+  <div class="map2">
+    <div class="map3">
+      <iframe class="Iframe"
         title="Tetra pharma Ltd. location"
         src="https://www.google.com/maps?q=Tetra+pharma+Ltd.&output=embed"
-        style="border:0; position:absolute; inset:0; width:100%; height:100%;"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
         allowfullscreen>
@@ -218,12 +205,9 @@
     </div>
 
     <!-- رابط فتح الموقع على جوجل مابس (اختياري) -->
-    <div style="text-align:right; margin-top:10px;">
-      <a href="https://www.google.com/maps?q=Tetra+pharma+Ltd."
-         target="_blank"
-         style="font:600 14px/1.2 ui-sans-serif,system-ui; text-decoration:none;
-                padding:10px 14px; border-radius:10px;
-                background:#1157a4; color:#fff; display:inline-block;">
+    <div class="google">
+      <a class="google_Link bluebttn" href="https://www.google.com/maps?q=Tetra+pharma+Ltd."
+         target="_blank">
        Open in Google map
       </a>
     </div>
@@ -236,20 +220,16 @@
   </div>
 
   <!-- bottom bar -->
-  <div style="
-    border-top:1px solid #e5e7eb; 
-    background:#ffffff; 
-    ">
-    <div style="max-width:1200px; margin:0 auto; padding:16px 18px; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">
-      <span style="color:#64748b;">© <span id="y_foot">2025</span> Tetra Pharma — All Rights Reserved</span>
-      <div style="height:6px; width:120px; border-radius:999px; background:linear-gradient(90deg,#d61d49,#1157a4); opacity:.9;"></div>
+  <div class="bottomBar">
+    <div class="bottom1">
+      <span class="footerBottom">© <span id="y_foot">2025</span> Tetra Pharma — All Rights Reserved</span>
+      <div class="Footerbtm"></div>
     </div>
   </div>
 </footer>
 <!-- ============ /FOOTER ============ -->
-
-<script>
-    // تفعيل Active للـ FAQ + Expand/Collapse All + فلترة بسيطة بالكلمات
+ <script>
+      // تفعيل Active للـ FAQ + Expand/Collapse All + فلترة بسيطة بالكلمات
 document.addEventListener('DOMContentLoaded', () => {
   /* 1) فعّل رابط FAQ في الناف */
   const navLinks = document.querySelectorAll('#mainNav .links a');
@@ -306,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-
 </script>
+<script src="../index.js"></script>
 </body>
 </html>

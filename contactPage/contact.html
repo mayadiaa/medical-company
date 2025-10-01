@@ -4,167 +4,37 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Contact — Tetra Pharma</title>
-
-<!-- ====== Base Styles (match product page) ====== -->
-<style>
-  :root{
-    --blue:#1157a4;
-    --blue-700:#0d4a8c;
-    --pink:#d61d49;
-    --ink:#0f172a;
-    --text:#334155;
-    --muted:#64748b;
-    --bg:#f8fafc;
-    --card:#ffffff;
-    --ring:#e5e7eb;
-    --shadow:0 10px 24px rgba(2,8,23,.06);
-  }
-  *{box-sizing:border-box}
-  body{margin:0; font-family: ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial; color:var(--text); background:#fff}
-  a{text-decoration:none; color:inherit}
-  img{max-width:100%; display:block}
-
-  /* ===== NAV (same spirit as product page) ===== */
-  .nav-wrap{
-    position:sticky; top:0; z-index:50;
-    background:#fff;
-    box-shadow:0 8px 20px rgba(2,8,23,.06);
-  }
-  .nav{
-    max-width:1200px; margin:0 auto; padding:12px 18px;
-    display:flex; align-items:center; justify-content:space-between; gap:12px;
-  }
-  .nav .brand{display:flex; align-items:center; gap:10px}
-  .nav .brand img{height:34px}
-  .nav .links{display:flex; align-items:center; gap:18px}
-  .nav .links a{
-    color:var(--ink); font-weight:700; font-size:15px;
-    padding:8px 6px; border-radius:10px;
-  }
-  .nav .links a:hover{color:var(--blue)}
-  .nav .career{
-    background:var(--blue); color:#fff; font-weight:800;
-    padding:10px 16px; border-radius:999px;
-    box-shadow:0 8px 18px rgba(17,87,164,.22);
-  }
-  .nav .career:hover{background:var(--blue-700)}
-
-  /* page header */
-  .page-hero{
-    background:linear-gradient(180deg,#ffffff 0%, #f3f6fb 100%);
-    padding:46px 18px 26px;
-    position:relative;
-  }
-  .page-hero .container{max-width:1200px; margin:0 auto;}
-  .kicker{color:var(--pink); font-weight:800; letter-spacing:.12em; font-size:12px}
-  .title{margin:10px 0 4px; font-size:36px; color:var(--ink); font-weight:900}
-  .subtitle{color:var(--muted)}
-
-  /* ===== CONTACT SECTION ===== */
-  .section{padding:40px 18px}
-  .container{max-width:1200px; margin:0 auto;}
-  .grid{
-    display:grid; gap:28px;
-    grid-template-columns: 1.1fr 1.1fr;
-  }
-  .card{
-    background:var(--card); border:1px solid var(--ring);
-    border-radius:18px; box-shadow:var(--shadow);
-  }
-  .contact-left{
-    padding:28px;
-    background:#fff;
-  }
-
-  .bigline{
-    font-family: "Georgia","Times New Roman",serif;
-    font-size:30px; line-height:1.35;
-    color:#223; font-weight:700;
-  }
-  .bigline em{color:var(--pink); font-style:normal; text-decoration:underline; text-decoration-thickness:2px}
-  .contact-list{
-    margin:18px 0; padding:0; list-style:none; color:var(--text);
-  }
-  .contact-list li{margin:10px 0; display:flex; gap:10px; align-items:flex-start}
-  .contact-list span.icon{color:var(--blue)}
-  .socials{display:flex; gap:10px; margin-top:10px; flex-wrap:wrap}
-  .chip{
-    padding:8px 12px; border:1px solid var(--ring);
-    color:var(--blue); border-radius:999px; font-weight:700; font-size:14px;
-  }
-
-  .form-wrap{padding:24px}
-  .form-row{margin-bottom:16px}
-  .label{display:block; margin-bottom:8px; font-weight:700; color:var(--ink)}
-  .input, .textarea{
-    width:100%; border:1px solid var(--ring); border-radius:12px;
-    padding:12px 14px; font-size:15px; outline:none; transition:border .15s ease, box-shadow .15s ease;
-    background:#fff;
-  }
-  .textarea{min-height:170px; resize:vertical}
-  .input:focus, .textarea:focus{
-    border-color:var(--blue);
-    box-shadow:0 0 0 4px rgba(17,87,164,.12);
-  }
-  .btn{
-    display:inline-block; border:0; cursor:pointer;
-    background:linear-gradient(135deg,var(--blue),var(--blue-700));
-    color:#fff; padding:14px 18px; border-radius:14px; font-weight:900;
-    box-shadow:0 10px 22px rgba(17,87,164,.22);
-  }
-  .btn:hover{transform:translateY(-1px)}
-
-  /* map */
-  .map-card{overflow:hidden}
-  .map-card iframe{width:100%; height:100%; min-height:360px; border:0; display:block}
-
-  /* ===== FOOTER (same as delivered) ===== */
-  footer{background:var(--bg); position:relative; margin-top:60px}
-  footer .foot-grid{
-    display:grid; gap:28px; grid-template-columns:1.1fr 1fr;
-  }
-  footer .brand-line{display:flex; align-items:center; gap:14px; margin-bottom:14px}
-  footer .brand-line img{height:38px}
-  footer .brand-line h3{margin:0; font-size:24px; color:var(--pink)}
-  footer .foot-card{background:#eef2f7; border-radius:18px; overflow:hidden; box-shadow:var(--shadow)}
-  .foot-bottom{border-top:1px solid var(--ring); background:#fff}
-
-  /* responsive */
-  @media (max-width: 980px){
-    .grid{grid-template-columns: 1fr}
-    footer .foot-grid{grid-template-columns:1fr}
-    .bigline{font-size:26px}
-    .title{font-size:30px}
-  }
-</style>
 	<link rel="stylesheet" href="./fonts/LCALLIG.TTF">
-    <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="contact.css">
 </head>
 
 <body >
 
-  <!-- ========== NAVBAR ========== -->
-<div class="nav-wrap">
+  <header class="nav-wrap">
   <div class="nav">
-    <div class="brand">
+    <a class="brand" href="../index.html" aria-label="Tetra Pharma">
       <img src="../images/new logo.png" alt="Tetra Pharma" />
-    </div>
+    </a>
 
-    <div class="links" style="margin-right: -3rem !important;">
-      <a class="Link_A" href="../index.html" target="_blank">Home</a>
-      <a class="Link_A" href="#about" target="_blank">About</a>
-      <a class="Link_A" href="../ProductPage/product.html">Products</a>
-      <a class="Link_A" href="#faq" target="_blank">FAQ</a>
+    <!-- Burger (mobile) -->
+    <button class="burger" aria-expanded="false" aria-controls="site-menu" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
 
-      <!-- Contact = ACTIVE -->
-      <a class="Link_A active" href="./contact.html" target="_blank">Contact</a>
-
-      <a class="Link_A" href="#blogs" target="_blank">Blogs</a>
-      <a class="cta career" href="../career page/career.html" target="_blank">Career</a>
+    <!-- Menu -->
+    <div id="site-menu" class="menu">
+      <div class="links">
+        <a class="Link_A" href="../index.html" target="_blank">Home</a>
+        <a class="Link_A" href="#about" target="_blank">About</a>
+        <a class="Link_A" href="../ProductPage/product.html">Products</a>
+        <a class="Link_A" href="#faq" target="_blank">FAQ</a>
+        <a class="Link_A active" href="./contact.html" target="_blank">Contact</a>
+        <a class="Link_A" href="#blogs" target="_blank">Blogs</a>
+        <a class="cta career" href="../career page/career.html" target="_blank">Career</a>
+      </div>
     </div>
   </div>
-</div>
-
+</header>
 
 
   <!-- ========== PAGE HEADER ========== -->
@@ -194,7 +64,7 @@
             <li><span class="icon">📞</span> <a href="tel:+20128197555">+20 10 60802711</a></li>
           </ul>
 
-          <div style="font-weight:800; color:var(--ink); margin-top:6px;">Social</div>
+          <div class="contactDiv">Social</div>
           <div class="socials">
             <a class="chip" href="https://www.facebook.com/tetrapharmaltd/">Facebook</a>
             <a class="chip" href="https://www.instagram.com/tetra_pharma/">Instagram</a>
@@ -223,22 +93,14 @@
         </div>
 
         <!-- full-width map (optional) -->
-        <div class="card map-card" style="grid-column: 1 / -1;">
+        <div class="card map-card contactSection">
           <!-- Map : Tetra pharma Ltd. -->
-<section style="padding:0; margin:0;">
-  <div style="
-      max-width:1200px;margin:0 auto;padding:0 16px;
-    ">
-    <div style="
-      position:relative; overflow:hidden;
-      border-radius:16px; box-shadow:0 12px 28px rgba(0,0,0,.08);
-      background:#f4f6f8;
-      height:420px;
-    ">
-      <iframe
+<section class="contactmap">
+  <div class="contact1">
+    <div class="contact2">
+      <iframe class="contactiframe"
         title="Tetra pharma Ltd. location"
         src="https://www.google.com/maps?q=Tetra+pharma+Ltd.&output=embed"
-        style="border:0; position:absolute; inset:0; width:100%; height:100%;"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
         allowfullscreen>
@@ -246,7 +108,7 @@
     </div>
 
     <!-- رابط فتح الموقع على جوجل مابس (اختياري) -->
-    <div style="text-align:right; margin-top:10px;">
+    <div class="googlemap">
       <a href="https://www.google.com/maps?q=Tetra+pharma+Ltd."
          target="_blank"></a>
          
@@ -260,67 +122,66 @@
       </div>
     </div>
   </section>
+<!-- =============== FOOTER =============== -->
+<footer class="footerClass">
+  <div class="footercard">
+    <div class="footer">
 
-  <!-- ========== FOOTER (same look & feel) ========== -->
-  <footer>
-    <div style="max-width:1200px; margin:0 auto; padding:50px 18px;">
-      <div class="foot-grid">
-        <!-- left -->
-        <div>
-          <div class="brand-line">
-            <img src="../images/new logo.png" alt="Tetra Pharma">
-            <h3>Tetra Pharma</h3>
-          </div>
+      <!-- LEFT: brand + contact + socials + career -->
+      <div>
+        <!-- Logo + name -->
+        <div class="logoContent">
+          <img class="LogoImg" src="../images/new logo.png" alt="Tetra Pharma">
+        </div>
 
-          <ul style="list-style:none; padding:0; margin:0 0 18px 0; color:var(--text);">
-            <li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
-              <span style="color:var(--blue);">📍</span>
-              <span>13 Hessein shafik el masry street , Cairo, Egypt</span>
-            </li>
-            <li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
-              <span style="color:var(--blue);">📞</span>
-              <a href="tel:+20123456789" style="color:var(--text)">+20 10 60802711</a>
-            </li>
-            <li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
-              <span style="color:var(--blue);">✉️</span>
-              <a href="mailto:info@tetrapharma.com" style="color:var(--text)">info@tetrapharma-eg.com</a>
-            </li>
-          </ul>
+        <!-- Contact blocks -->
+        <ul class="ContactDiv">
+          <li class="ContactLi">
+            <span class="bluecolor">📍</span>
+            <span>13 Hessein shafik el masry street , Cairo, Egypt</span>
+          </li>
+          <li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
+            <span class="bluecolor">📞</span>
+            <a href="tel:+20123456789" style="color:#334155; text-decoration:none;">+20 10 60802711</a>
+          </li>
+          <li style="display:flex; align-items:flex-start; gap:10px; margin:10px 0;">
+            <span class="bluecolor">✉️</span>
+            <a href="mailto:info@tetrapharma.com" class="Email">info@tetrapharma-eg.com</a>
+          </li>
+        </ul>
 
-          <div style="margin:16px 0 24px 0;">
-            <div style="font-weight:700; color:var(--ink); margin-bottom:10px;">Social</div>
-            <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <a class="chip" href="https://www.facebook.com/tetrapharmaltd/">Facebook</a>
-            <a class="chip" href="https://www.instagram.com/tetra_pharma/">Instagram</a>
-            <a class="chip" href="#">TikTok</a>
-            <a class="chip" href="#">LinkedIn</a>
-            </div>
-          </div>
-
-          <div style="margin-top:10px;">
-            <div style="font-weight:800; color:var(--ink); font-size:20px; margin-bottom:10px;">Build your Career</div>
-            <a href="#career" class="btn" style="box-shadow:0 8px 20px rgba(17,87,164,.18)">Send your CV</a>
+        <!-- Social -->
+        <div class="social">
+          <div class="socialDiv redcolor">Social</div>
+          <div class="socials">
+            <a class="Social1 bluecolor" href="https://www.facebook.com/tetrapharmaltd/">Facebook</a>
+            <a  class="Social2 bluecolor" href="https://www.instagram.com/tetra_pharma/" >Instagram</a>
+            <a  class="Social3 bluecolor" href="#">TikTok</a>
+            <a  class="Social4 bluecolor" href="#" >LinkedIn</a>
           </div>
         </div>
 
-        <!-- right map small -->
-        <div class="foot-card">
-          <!-- Map : Tetra pharma Ltd. -->
-<!-- Map : Tetra pharma Ltd. -->
-<section style="padding:0; margin:0;">
-  <div style="
-      max-width:1200px;margin:0 auto;padding:0 16px;
-    ">
-    <div style="
-      position:relative; overflow:hidden;
-      border-radius:16px; box-shadow:0 12px 28px rgba(0,0,0,.08);
-      background:#f4f6f8;
-      height:420px;
-    ">
-      <iframe
+        <!-- Career CTA -->
+        <div class="career">
+          <div class="career1 bluecolor">Build your Career</div>
+          <a class="career2 bluebttn" href="../career page/career.html" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 26px rgba(17,87,164,.24)'" 
+             onmouseout="this.style.transform=''; this.style.boxShadow='0 8px 20px rgba(17,87,164,.18)'">
+            Send your CV
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Google map -->
+      <div>
+        <div class="map">
+          <!-- استخدمي iframe الجاهز لو عندك؛ ده مثال بسيط -->
+         <!-- Map : Tetra pharma Ltd. -->
+<section class="map1">
+  <div class="map2">
+    <div class="map3">
+      <iframe class="Iframe"
         title="Tetra pharma Ltd. location"
         src="https://www.google.com/maps?q=Tetra+pharma+Ltd.&output=embed"
-        style="border:0; position:absolute; inset:0; width:100%; height:100%;"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
         allowfullscreen>
@@ -328,30 +189,30 @@
     </div>
 
     <!-- رابط فتح الموقع على جوجل مابس (اختياري) -->
-    <div style="text-align:right; margin-top:10px;">
-      <a href="https://www.google.com/maps?q=Tetra+pharma+Ltd."
-         target="_blank"
-         style="font:600 14px/1.2 ui-sans-serif,system-ui; text-decoration:none;
-                padding:10px 14px; border-radius:10px;
-                background:#1157a4; color:#fff; display:inline-block;">
-        فتح الموقع على Google Maps
+    <div class="google">
+      <a class="google_Link bluebttn" href="https://www.google.com/maps?q=Tetra+pharma+Ltd."
+         target="_blank">
+       Open in Google map
       </a>
     </div>
   </div>
 </section>
 
-
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="foot-bottom">
-      <div style="max-width:1200px; margin:0 auto; padding:16px 18px; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">
-        <span style="color:var(--muted);">© <span id="y_foot">2025</span> Tetra Pharma — All Rights Reserved</span>
-        <div style="height:6px; width:120px; border-radius:999px; background:linear-gradient(90deg,var(--pink),var(--blue)); opacity:.9;"></div>
-      </div>
+  <!-- bottom bar -->
+  <div class="bottomBar">
+    <div class="bottom1">
+      <span class="footerBottom">© <span id="y_foot">2025</span> Tetra Pharma — All Rights Reserved</span>
+      <div class="Footerbtm"></div>
     </div>
-  </footer>
+  </div>
+</footer>
+<!-- ============ /FOOTER ============ -->
+
 
 <script>
   // سنة الحقوق
@@ -380,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-
+<script src="../index.js"></script>
 
 </body>
 </html>

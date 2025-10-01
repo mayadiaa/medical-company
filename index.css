@@ -72,7 +72,7 @@ html,body{margin:0}
 .site-nav.overlay:not(.scrolled) .navImg{ filter:drop-shadow(0 0 6px rgba(0,0,0,.35)) }
 
 /* بعد السكروول */
-.site-nav.scrolled{ background:#fff; border-color:var(--border); box-shadow:var(--shadow) }
+.site-nav.scrolled{ background:#fff; border-color:var(--border); box-shadow:var(--shadow)  }
 
 /* Actions */
 .career_btn{
@@ -87,8 +87,10 @@ html,body{margin:0}
     font-size: larger;
     color: #fff !important;
 }
-.career_btn:hover{ background:#0c5ddb; border-color:#0c5ddb }
 
+
+/* لو عندك قاعدة بتعمل أندرلاين للروابط بـ ::after امنعيها عن الكارير */
+.site-nav .career_btn::after{ display:none !important; }
 /* ===== Language dropdown ===== */
 .lang{ position:relative; }
 .lang-trigger{

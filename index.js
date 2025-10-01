@@ -358,3 +358,33 @@ document.addEventListener('click', (e) => {
   btn.textContent = expanded ? 'Read less' : 'Read more';
   btn.setAttribute('aria-expanded', expanded);
 });
+
+// contact
+ (function () {
+    const burger = document.querySelector('.burger');
+    const menu   = document.getElementById('site-menu');
+    if (!burger || !menu) return;
+
+    function toggle(open){
+      burger.classList.toggle('is-open', open);
+      menu.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : ''; // منع سكرول خلف المنيو
+    }
+
+    burger.addEventListener('click', () => toggle(!menu.classList.contains('open')));
+    // اقفل لما تضغطي على أي لينك
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => toggle(false));
+    });
+  })();
+
+  // تفعيل لينك الصفحة الحالية (لو حابة)
+  (function () {
+    const current = location.pathname.split('/').pop().toLowerCase();
+    document.querySelectorAll('.links a[href]').forEach(a=>{
+      const href = (a.getAttribute('href')||'').split('/').pop().toLowerCase();
+      if (href && href === current) a.classList.add('active');
+    });
+  })();
+  
